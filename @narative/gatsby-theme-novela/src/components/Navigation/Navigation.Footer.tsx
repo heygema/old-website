@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { graphql, useStaticQuery } from "gatsby";
+import React from 'react';
+import styled from '@emotion/styled';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
-import Section from "@components/Section";
-import SocialLinks from "@components/SocialLinks";
+import Section from '@components/Section';
+import SocialLinks from '@components/SocialLinks';
 
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 
 const siteQuery = graphql`
   {
@@ -43,8 +43,8 @@ const Footer: React.FC<{}> = () => {
 
   const copyrightDate = (() => {
     const { edges } = results.allMdx;
-    const years = [0, edges.length - 1].map((edge) =>
-      new Date(edges[edge].node.frontmatter.date).getFullYear()
+    const years = [0, edges.length - 1].map(edge =>
+      new Date(edges[edge].node.frontmatter.date).getFullYear(),
     );
     return years[0] === years[1] ? `${years[0]}` : `${years[0]}–${years[1]}`;
   })();
@@ -56,7 +56,16 @@ const Footer: React.FC<{}> = () => {
         <HoritzontalRule />
         <FooterContainer>
           <FooterText>
-            © {copyrightDate} {name}
+            © {copyrightDate} {name}, themes provided by{' '}
+            <ThemeReference
+              href="https://www.narative.co/"
+              target="_blank"
+              data-a11y="false"
+              title="Navigate to theme"
+              aria-label="Navigate to theme"
+            >
+              Narative
+            </ThemeReference>
           </FooterText>
           <div>
             <SocialLinks links={social} />
@@ -68,6 +77,10 @@ const Footer: React.FC<{}> = () => {
 };
 
 export default Footer;
+
+const ThemeReference = styled.a`
+  color: ${p => p.theme.colors.grey};
+`;
 
 const FooterContainer = styled.div`
   position: relative;

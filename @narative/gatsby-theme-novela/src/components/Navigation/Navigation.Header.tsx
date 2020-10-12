@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import styled from "@emotion/styled";
-import { Link, navigate, graphql, useStaticQuery } from "gatsby";
-import { useColorMode } from "theme-ui";
+import React, { useState, useEffect } from 'react';
+import styled from '@emotion/styled';
+import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
+import { useColorMode } from 'theme-ui';
+import Headings from '@components/Headings';
 
-import Section from "@components/Section";
-import Logo from "@components/Logo";
+import Section from '@components/Section';
 
-import Icons from "@icons";
-import mediaqueries from "@styles/media";
+import Icons from '@icons';
+import mediaqueries from '@styles/media';
 import {
   copyToClipboard,
   getWindowDimensions,
   getBreakpointFromTheme,
-} from "@utils";
+} from '@utils';
 
 const siteQuery = graphql`
   {
@@ -39,8 +39,8 @@ const DarkModeToggle: React.FC<{}> = () => {
       isDark={isDark}
       onClick={toggleColorMode}
       data-a11y="false"
-      aria-label={isDark ? "Activate light mode" : "Activate dark mode"}
-      title={isDark ? "Activate light mode" : "Activate dark mode"}
+      aria-label={isDark ? 'Activate light mode' : 'Activate dark mode'}
+      title={isDark ? 'Activate light mode' : 'Activate dark mode'}
     >
       <MoonOrSun isDark={isDark} />
       <MoonMask isDark={isDark} />
@@ -52,7 +52,7 @@ const SharePageButton: React.FC<{}> = () => {
   const [hasCopied, setHasCopied] = useState<boolean>(false);
   const [colorMode] = useColorMode();
   const isDark = colorMode === `dark`;
-  const fill = isDark ? "#fff" : "#000";
+  const fill = isDark ? '#fff' : '#000';
 
   function copyToClipboardOnClick() {
     if (hasCopied) return;
@@ -83,22 +83,23 @@ const SharePageButton: React.FC<{}> = () => {
 
 const NavigationHeader: React.FC<{}> = () => {
   const [showBackArrow, setShowBackArrow] = useState<boolean>(false);
-  const [previousPath, setPreviousPath] = useState<string>("/");
+  const [previousPath, setPreviousPath] = useState<string>('/');
   const { sitePlugin } = useStaticQuery(siteQuery);
 
   const [colorMode] = useColorMode();
-  const fill = colorMode === "dark" ? "#fff" : "#000";
+  const fill = colorMode === 'dark' ? '#fff' : '#000';
   const { rootPath, basePath } = sitePlugin.pluginOptions;
 
   useEffect(() => {
     const { width } = getWindowDimensions();
-    const phablet = getBreakpointFromTheme("phablet");
+    const phablet = getBreakpointFromTheme('phablet');
 
-    const prev = localStorage.getItem("previousPath");
+    const prev = localStorage.getItem('previousPath');
     const previousPathWasHomepage =
-      prev === (rootPath || basePath) || (prev && prev.includes("/page/"));
+      prev === (rootPath || basePath) || (prev && prev.includes('/page/'));
     const currentPathIsHomepage =
-      location.pathname === (rootPath || basePath) || location.pathname.includes("/page/");
+      location.pathname === (rootPath || basePath) ||
+      location.pathname.includes('/page/');
 
     setShowBackArrow(
       previousPathWasHomepage && !currentPathIsHomepage && width <= phablet,
@@ -114,14 +115,15 @@ const NavigationHeader: React.FC<{}> = () => {
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage"
-          back={showBackArrow ? "true" : "false"}
+          back={showBackArrow ? 'true' : 'false'}
         >
           {showBackArrow && (
             <BackArrowIconContainer>
               <Icons.ChevronLeft fill={fill} />
             </BackArrowIconContainer>
           )}
-          <Logo fill={fill} />
+
+          <Title>Gema Anggada</Title>
           <Hidden>Navigate back to the homepage</Hidden>
         </LogoLink>
         <NavControls>
@@ -135,6 +137,15 @@ const NavigationHeader: React.FC<{}> = () => {
             </button>
           ) : (
             <>
+              <LogoLink
+                to="/about"
+                data-a11y="false"
+                title="Navigate to about page"
+                aria-label="Navigate to about page"
+                back={showBackArrow ? 'true' : 'false'}
+              >
+                <AboutText>About</AboutText>
+              </LogoLink>
               <SharePageButton />
               <DarkModeToggle />
             </>
@@ -146,6 +157,54 @@ const NavigationHeader: React.FC<{}> = () => {
 };
 
 export default NavigationHeader;
+
+const AboutText = styled(Headings.h4)`
+  opacity: 0.5;
+  font-size: 1.8rem;
+  font-family: ${p => p.theme.fonts.serif};
+  animation: fadein 0.3s linear forwards;
+
+  ${mediaqueries.tablet`
+    font-size: 1.5rem;  
+  `}
+
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  ${mediaqueries.phablet`
+    font-size: 1.3rem;  
+    padding: 30px 20px 0;
+    margin-bottom: 28px;
+    -webkit-line-clamp: 3;
+  `}
+`;
+
+const Title = styled(Headings.h2)`
+  font-size: 2rem;
+  font-family: ${p => p.theme.fonts.serif};
+  margin-bottom: ${p =>
+    p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '10px'};
+  transition: color 0.3s ease-in-out;
+
+  ${mediaqueries.desktop`
+    margin-bottom: 15px;
+  `}
+
+  ${mediaqueries.tablet`
+    font-size: 24px;  
+  `}
+
+  ${mediaqueries.phablet`
+    font-size: 22px;  
+    padding: 30px 20px 0;
+    margin-bottom: 28px;
+    -webkit-line-clamp: 3;
+  `}
+`;
 
 const BackArrowIconContainer = styled.div`
   transition: 0.2s transform var(--ease-out-quad);
@@ -184,14 +243,14 @@ const LogoLink = styled(Link)<{ back: string }>`
   position: relative;
   display: flex;
   align-items: center;
-  left: ${p => (p.back === "true" ? "-54px" : 0)};
+  left: ${p => (p.back === 'true' ? '-54px' : 0)};
 
   ${mediaqueries.desktop_medium`
     left: 0
   `}
 
   &[data-a11y="true"]:focus::after {
-    content: "";
+    content: '';
     position: absolute;
     left: -10%;
     top: -30%;
@@ -222,17 +281,17 @@ const NavControls = styled.div`
 const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   position: absolute;
   padding: 4px 13px;
-  background: ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
-  color: ${p => (p.isDark ? "#fff" : "#000")};
+  background: ${p => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
+  color: ${p => (p.isDark ? '#fff' : '#000')};
   border-radius: 5px;
   font-size: 14px;
   top: -35px;
   opacity: ${p => (p.hasCopied ? 1 : 0)};
-  transform: ${p => (p.hasCopied ? "translateY(-3px)" : "none")};
+  transform: ${p => (p.hasCopied ? 'translateY(-3px)' : 'none')};
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     right: 0;
@@ -242,7 +301,7 @@ const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid ${p => (p.isDark ? "#000" : "rgba(0,0,0,0.1)")};
+    border-top: 6px solid ${p => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
   }
 `;
 
@@ -262,8 +321,8 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
     opacity: 1;
   }
 
-  &[data-a11y="true"]:focus::after {
-    content: "";
+  &[data-a11y='true']:focus::after {
+    content: '';
     position: absolute;
     left: 0;
     top: -30%;
@@ -292,15 +351,15 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: ${p => (p.isDark ? "4px" : "2px")} solid
+  border: ${p => (p.isDark ? '4px' : '2px')} solid
     ${p => p.theme.colors.primary};
   background: ${p => p.theme.colors.primary};
   transform: scale(${p => (p.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
-  overflow: ${p => (p.isDark ? "visible" : "hidden")};
+  overflow: ${p => (p.isDark ? 'visible' : 'hidden')};
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     right: -9px;
     top: -9px;
@@ -308,13 +367,13 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
     width: 24px;
     border: 2px solid ${p => p.theme.colors.primary};
     border-radius: 50%;
-    transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
+    transform: translate(${p => (p.isDark ? '14px, -14px' : '0, 0')});
     opacity: ${p => (p.isDark ? 0 : 1)};
     transition: transform 0.45s ease;
   }
 
   &::after {
-    content: "";
+    content: '';
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -348,7 +407,7 @@ const MoonMask = styled.div<{ isDark: boolean }>`
   border-radius: 50%;
   border: 0;
   background: ${p => p.theme.colors.background};
-  transform: translate(${p => (p.isDark ? "14px, -14px" : "0, 0")});
+  transform: translate(${p => (p.isDark ? '14px, -14px' : '0, 0')});
   opacity: ${p => (p.isDark ? 0 : 1)};
   transition: ${p => p.theme.colorModeTransition}, transform 0.45s ease;
 `;

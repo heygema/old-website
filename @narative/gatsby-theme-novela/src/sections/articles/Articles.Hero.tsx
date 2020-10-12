@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 
 import Section from '@components/Section';
-import Bio from '@components/Bio';
 import Icons from '@icons';
 import mediaqueries from '@styles/media';
 import { IAuthor } from '@types';
@@ -47,10 +46,10 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
   return (
     <Section relative id="Articles__Hero">
       <HeadingContainer style={{ maxWidth: `${hero.maxWidth}px` }}>
-        <HeroHeading dangerouslySetInnerHTML={{ __html: hero.heading }} />
+        {/* <HeroHeading dangerouslySetInnerHTML={{ __html: hero.heading }} /> */}
       </HeadingContainer>
       <SubheadingContainer>
-        <Bio author={featuredAuthor} />
+        <BlankSpace />
         <GridControlsContainer>
           <GridButton
             onClick={() => setGridLayout('tiles')}
@@ -75,6 +74,13 @@ const ArticlesHero: React.FC<IAuthor> = ({ authors }) => {
     </Section>
   );
 };
+
+const BlankSpace = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -10px;
+`;
 
 export default ArticlesHero;
 

@@ -8,6 +8,7 @@ import Headings from '@components/Headings';
 import Paragraph from '@components/Paragraph';
 import SEO from '@components/SEO';
 import Layout from '@components/Layout';
+import Subscription from '@components/Subscription';
 import mediaqueries from '@styles/media';
 
 import { Template } from '@types';
@@ -74,7 +75,9 @@ const GooeyInner3 = styled(GooeyContainer)`
   animation: back-rotate 7s linear infinite;
 `;
 
-const AboutPage: Template = ({ location, pageContext }) => {
+const greetings = ['Hello!', 'Halo!', 'Приве́т!', 'Bonjour!'];
+
+const AboutPage: Template = ({ location }) => {
   return (
     <Layout>
       <SEO
@@ -82,37 +85,38 @@ const AboutPage: Template = ({ location, pageContext }) => {
         title="Gema Anggada"
         description="Gema's personal site"
       />
-      <Section narrow>
+      <Section>
         <Row>
           <div style={{ flex: 1, paddingTop: 60 }}>
-            <div style={{ minHeight: 100 }}>
-              <Ketikin
-                texts={['Hello!', 'Halo!', 'приве́т!', 'Bonjour!']}
-                interval={180}
-              >
-                {value => <Title>{value}</Title>}
+            <div css={{ minHeight: 100 }}>
+              <Ketikin texts={greetings} interval={180}>
+                {value => <Title>{value || '_'}</Title>}
               </Ketikin>
             </div>
-
-            <P narrow={true} hasOverflow={true}>
+            <P>
               👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
               Jakarta, Indonesia. I have experiences in developing website and
               mobile apps using the power of React & React Native! My main
               programming language is Javascript, but always interested to dive
               into languages like Kotlin, ReasonML, and Elm. I'm planning to
-              write about many topics in here and not limited to programming.
-              Meanwhile, thanks for coming by & I hope you enjoy!
+              write about variety of topics here including but not limited to
+              programming. Meanwhile, thanks for coming by and I hope you enjoy!
             </P>
           </div>
           <div
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+            css={{
+              display: 'flex',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
             <Goeey />
           </div>
         </Row>
         <Row>
           <div
-            style={{
+            css={{
               flex: 1,
               flexDirection: 'column',
               display: 'flex',
@@ -121,18 +125,28 @@ const AboutPage: Template = ({ location, pageContext }) => {
             }}
           >
             <div
-              style={{
+              css={{
                 display: 'flex',
                 justifyContent: 'center',
               }}
             >
               <Title> Featured Works </Title>
             </div>
-            <div style={{ flex: 1, display: 'flex' }}>
-              <P> No featured works yet.</P>
+            <div
+              css={{
+                flex: 1,
+                minHeight: 400,
+                zIndex: 100,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <NothingYetContainer> Nothing yet.</NothingYetContainer>
             </div>
           </div>
         </Row>
+        <Subscription />
       </Section>
     </Layout>
   );
@@ -181,6 +195,24 @@ const Title = styled(Headings.h1)`
   `}
 `;
 
+const NothingYetContainer = styled(Paragraph)`
+  text-align: center;
+  font-size: 2.3rem;
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+  ${mediaqueries.phablet`
+    font-size: 1.8rem;
+    margin-bottom; 15px;
+  `}
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    padding:  0 20px;
+    margin-bottom: 20px;
+    -webkit-line-clamp: 3;
+  `}
+`;
+
 const P = styled(Paragraph)<{
   narrow: boolean;
 }>`
@@ -194,6 +226,7 @@ const P = styled(Paragraph)<{
   `}
 
   ${mediaqueries.phablet`
+    font-size: 1.8rem;
     margin-bottom; 15px;
   `}
 

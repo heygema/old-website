@@ -264,16 +264,13 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     });
   }
 
- log('Creating', 'creating about page');
+  log('Creating', 'creating about page');
 
- createPage({
-      path: '/about',
-      component: templates.about,
-      context: {
-          author: 'x',
-          originalPath: '/about',
-          skip: 0,
-          limit: 10,
-      },
- })
+  createPage({
+    path: '/about',
+    component: templates.about,
+    context: {
+      originalPath: '/about',
+    },
+  });
 };

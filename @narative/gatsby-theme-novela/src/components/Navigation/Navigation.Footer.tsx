@@ -56,7 +56,7 @@ const Footer: React.FC<{}> = () => {
         <HoritzontalRule />
         <FooterContainer>
           <FooterText>
-            © {copyrightDate} {name}, themes provided by{' '}
+            © {copyrightDate} {name}, themes based on Novela by{' '}
             <ThemeReference
               href="https://www.narative.co/"
               target="_blank"
@@ -66,6 +66,7 @@ const Footer: React.FC<{}> = () => {
             >
               Narative
             </ThemeReference>
+            . ❤ ️
           </FooterText>
           <div>
             <SocialLinks links={social} />

@@ -13,6 +13,7 @@ const templates = {
   articles: path.resolve(templatesDirectory, 'articles.template.tsx'),
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
+  about: path.resolve(templatesDirectory, 'about.tsx'),
 };
 
 const query = require('../data/data.query');
@@ -262,4 +263,17 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       });
     });
   }
+
+ log('Creating', 'creating about page');
+
+ createPage({
+      path: '/about',
+      component: templates.about,
+      context: {
+          author: 'x',
+          originalPath: '/about',
+          skip: 0,
+          limit: 10,
+      },
+ })
 };

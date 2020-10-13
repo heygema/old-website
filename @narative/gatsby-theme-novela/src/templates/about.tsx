@@ -9,6 +9,7 @@ import Paragraph from '@components/Paragraph';
 import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import Subscription from '@components/Subscription';
+import Image from '@components/Image';
 import mediaqueries from '@styles/media';
 
 import { Template } from '@types';
@@ -50,6 +51,12 @@ const Goeey: React.FC<{}> = () => {
           />
         </svg>
       </GooeyInner3>
+
+      <Image
+        css={{ position: 'absolute', marginLeft: 90 }}
+        height={320}
+        src={require('../images/avatar_web.png')}
+      />
     </GooeyContainer>
   );
 };
@@ -87,7 +94,7 @@ const AboutPage: Template = ({ location }) => {
       />
       <Section>
         <Row>
-          <div style={{ flex: 1, paddingTop: 60 }}>
+          <div css={{ flex: 1, paddingTop: 60 }}>
             <div css={{ minHeight: 100 }}>
               <Ketikin texts={greetings} interval={180}>
                 {value => <Title>{value || '_'}</Title>}
@@ -97,10 +104,13 @@ const AboutPage: Template = ({ location }) => {
               👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
               Jakarta, Indonesia. I have experiences in developing website and
               mobile apps using the power of React & React Native! My main
-              programming language is Javascript, but always interested to dive
-              into languages like Kotlin, ReasonML, and Elm. I'm planning to
+              programming language is Javascript, but always interested to work
+              in other languages such as Kotlin, ReasonML, or Python. Life
+              aside, I also love playing piano and traveling. I'm planning to
               write about variety of topics here including but not limited to
-              programming. Meanwhile, thanks for coming by and I hope you enjoy!
+              programming.
+              <br />
+              Meanwhile, thanks for coming by & I hope you enjoy!
             </P>
           </div>
           <div
@@ -198,18 +208,12 @@ const Title = styled(Headings.h1)`
 const NothingYetContainer = styled(Paragraph)`
   text-align: center;
   font-size: 2.3rem;
-  ${mediaqueries.desktop`
-    display: -webkit-box;
-  `}
   ${mediaqueries.phablet`
     font-size: 1.8rem;
     margin-bottom; 15px;
   `}
   ${mediaqueries.phablet`
-    max-width: 100%;
-    padding:  0 20px;
     margin-bottom: 20px;
-    -webkit-line-clamp: 3;
   `}
 `;
 

@@ -5,6 +5,7 @@ import { useColorMode } from 'theme-ui';
 
 import Section from '@components/Section';
 import Headings from '@components/Headings';
+import Paragraph from '@components/Paragraph';
 import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import mediaqueries from '@styles/media';
@@ -83,13 +84,25 @@ const AboutPage: Template = ({ location, pageContext }) => {
       />
       <Section narrow>
         <Row>
-          <div style={{ flex: 1, paddingTop: 40 }}>
-            <Ketikin
-              texts={['Hello!', 'Halo!', 'приве́т!', 'Bonjour!']}
-              interval={180}
-            >
-              {value => <Title>{value}</Title>}
-            </Ketikin>
+          <div style={{ flex: 1, paddingTop: 60 }}>
+            <div style={{ minHeight: 100 }}>
+              <Ketikin
+                texts={['Hello!', 'Halo!', 'приве́т!', 'Bonjour!']}
+                interval={180}
+              >
+                {value => <Title>{value}</Title>}
+              </Ketikin>
+            </div>
+
+            <P narrow={true} hasOverflow={true}>
+              👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
+              Jakarta, Indonesia. I have experiences in developing website and
+              mobile apps using the power of React & React Native! My main
+              programming language is Javascript, but always interested to dive
+              into languages like Kotlin, ReasonML, and Elm. I'm planning to
+              write about many topics in here and not limited to programming.
+              Meanwhile, thanks for coming by & I hope you enjoy!
+            </P>
           </div>
           <div
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
@@ -97,7 +110,29 @@ const AboutPage: Template = ({ location, pageContext }) => {
             <Goeey />
           </div>
         </Row>
-        <Row></Row>
+        <Row>
+          <div
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              display: 'flex',
+              width: '100%',
+              paddingTop: 60,
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Title> Featured Works </Title>
+            </div>
+            <div style={{ flex: 1, display: 'flex' }}>
+              <P> No featured works yet.</P>
+            </div>
+          </div>
+        </Row>
       </Section>
     </Layout>
   );
@@ -109,8 +144,15 @@ const Row = styled.div`
   display: flex;
   flex: 1;
   min-height: 45vh;
-  padding-top: 28px;
   flex-direction: row;
+
+  ${mediaqueries.tablet`
+    flex-direction: column-reverse;
+    
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  `}
 
   ${mediaqueries.phablet`
     flex-direction: column-reverse;
@@ -123,9 +165,6 @@ const Row = styled.div`
 
 const Title = styled(Headings.h1)`
   font-family: ${p => p.theme.fonts.serif};
-  margin-bottom: ${p =>
-    p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '10px'};
-  transition: color 0.3s ease-in-out;
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -139,22 +178,29 @@ const Title = styled(Headings.h1)`
     font-size: 22px;  
     padding: 30px 20px 0;
     margin-bottom: 10px;
-    -webkit-line-clamp: 3;
   `}
 `;
 
-const Gradient = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 590px;
-  z-index: 0;
-  pointer-events: none;
-  background: ${p => p.theme.colors.gradient};
-  transition: ${p => p.theme.colorModeTransition};
-`;
+const P = styled(Paragraph)<{
+  narrow: boolean;
+}>`
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  max-width: ${p => (p.narrow ? '415px' : '515px')};
+  margin-left: 0px;
 
-const AuthorPaginator = styled.div`
-  text-align: center;
+  ${mediaqueries.desktop`
+    display: -webkit-box;
+  `}
+
+  ${mediaqueries.phablet`
+    margin-bottom; 15px;
+  `}
+
+  ${mediaqueries.phablet`
+    max-width: 100%;
+    padding:  0 20px;
+    margin-bottom: 20px;
+    -webkit-line-clamp: 3;
+  `}
 `;

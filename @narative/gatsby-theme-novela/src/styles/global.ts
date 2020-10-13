@@ -1,4 +1,4 @@
-import { css } from "@emotion/core";
+import { css } from '@emotion/core';
 
 export const globalStyles = css`
   /**
@@ -15,9 +15,9 @@ export const globalStyles = css`
   }
 
   @font-face {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
+      'Arial', sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -44,9 +44,9 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
+      'Arial', sans-serif;
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;
@@ -81,9 +81,9 @@ export const globalStyles = css`
   textarea,
   select,
   button {
-    font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
-      "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
-      "Arial", sans-serif;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
+      'Arial', sans-serif;
   }
 
   .underline {
@@ -134,12 +134,54 @@ export const globalStyles = css`
       outline: none;
     }
 
-    &[type="number"] {
+    &[type='number'] {
       width: auto;
     }
   }
 
   img.Image__Zoom ~ div {
     background: transparent !important;
+  }
+
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes infiniteRotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  /* Standard syntax */
+  @keyframes infinite-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Standard syntax */
+  @keyframes back-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes infinite-scale {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(0.8);
+    }
   }
 `;

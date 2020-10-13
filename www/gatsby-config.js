@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const siteMetadata = {
   title: `Novela by Narative`,
-  name: `Gema Anggada`,
+  name: `Gema`,
   siteUrl: `https://heygema.github.io`,
   description: `Gema Anggada's personal internet space for blogging and bio.`,
   hero: {

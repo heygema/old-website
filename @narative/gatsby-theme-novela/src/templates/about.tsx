@@ -84,7 +84,36 @@ const GooeyInner3 = styled(GooeyContainer)`
 
 const greetings = ['Hello!', 'Halo!', 'Приве́т!', 'Bonjour!', 'Xin Chào!'];
 
+function LinkText({ href = '', text = '' }) {
+  return (
+    <BoldLink href={href} target="_blank">
+      {text}
+    </BoldLink>
+  );
+}
+
 const AboutPage: Template = ({ location }) => {
+  const reactLink = <LinkText href="https://reactjs.org/" text="React" />;
+
+  const reactNativeLink = (
+    <LinkText href=" https://reactnative.dev/" text="React Native" />
+  );
+
+  const reasonMLLink = (
+    <LinkText href="https://reasonml.github.io/" text="ReasonML" />
+  );
+
+  const kotlinLink = <LinkText href="https://kotlinlang.org/" text="Kotlin" />;
+
+  const pythonLink = <LinkText href="https://www.python.org/" text="Python" />;
+
+  const pianoLink = (
+    <LinkText href="https://en.wikipedia.org/wiki/Piano" text="piano" />
+  );
+  const travelingLink = (
+    <LinkText href="https://en.wikipedia.org/wiki/Travel" text="traveling" />
+  );
+
   return (
     <Layout>
       <SEO
@@ -103,19 +132,12 @@ const AboutPage: Template = ({ location }) => {
             <P>
               👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
               Jakarta, Indonesia. I have experiences in developing website and
-              mobile apps using the power of{' '}
-              <BoldLink href="https://reactjs.org/" target="_blank">
-                React
-              </BoldLink>{' '}
-              &{' '}
-              <BoldLink href="https://reactnative.dev/" target="_blank">
-                React Native
-              </BoldLink>{' '}
-              ! My main programming language is Javascript, while also love
-              playing with other languages such as Kotlin, ReasonML, or Python.
-              Life aside, I also love playing piano and traveling. I'm planning
-              to write about variety of topics here including but not limited to
-              programming.
+              mobile apps using the power of {reactLink} & {reactNativeLink}! My
+              main programming language is Javascript, while also love playing
+              with other languages such as {kotlinLink}, {reasonMLLink}, or{' '}
+              {pythonLink}. Life aside, I also love playing {pianoLink} and{' '}
+              {travelingLink}. I'm planning to write about variety of topics
+              here including but not limited to programming.
               <br />
               Meanwhile, thanks for coming by & I hope you enjoy!
             </P>
@@ -241,6 +263,10 @@ const NothingYetContainer = styled(Paragraph)`
 const BoldLink = styled.a`
   color: ${p => p.theme.colors.articleText};
   font-weight: 700;
+
+  &:hover {
+    color: ${p => p.theme.colors.accent};
+  }
 `;
 
 BoldLink.defaultProps = { target: '_blank' };

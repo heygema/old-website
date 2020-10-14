@@ -60,17 +60,18 @@ const plugins = [
       display: `standalone`,
     },
   },
-  {
-    resolve: `gatsby-plugin-google-analytics`,
-    options: {
-      trackingId: "UA-118232427-3",
-    },
-  },
+  // NOTE: remove analytics
+  // {
+  //   resolve: `gatsby-plugin-google-analytics`,
+  //   options: {
+  //     trackingId: "UA-118232427-3",
+  //   },
+  // },
   {
     resolve: "gatsby-plugin-mailchimp",
     options: {
       endpoint:
-        "https://narative.us19.list-manage.com/subscribe/post?u=65ef169332a03669b9538f6ef&amp;id=c55c426282",
+        "https://github.us2.list-manage.com/subscribe?u=891008f2da0cae715f3833eeb&id=e647010d64"
     },
   },
 ];

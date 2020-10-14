@@ -4,8 +4,8 @@
     Guest posts are welcome.
     please mail me in the link below (email icon)
     hope you enjoy!
-  avatar: ./avatars/dennis-brotzky.jpg
   featured: true
+  avatar: ./avatars/gema.jpg
   social:
     - url: https://stackoverflow.com
     - url: https://twitter.com/heygema
@@ -16,7 +16,6 @@
   bio: |
     Written by You. This is where your author bio lives. Share your work, your
     joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
   social:
     - url: https://unsplash.com
     - url: https://stackoverflow.com
@@ -29,7 +28,6 @@
   bio: |
     Written by You. This is where your author bio lives. Share your work, your
     joys and of course, your Twitter handle.
-  avatar: ./avatars/thiago-costa.jpg
   social:
     - url: https://github.com
     - url: https://github.com
@@ -42,7 +40,6 @@
   bio: |
     Written by You. This is where your author bio lives. Share your work, your
     joys and of course, your Twitter handle.
-  avatar: ./avatars/brad-tiller.jpg
   social:
     - url: https://github.com
     - url: https://github.com
@@ -55,7 +52,6 @@
   bio: |
     Written by You. This is where your author bio lives. Share your work, your
     joys and of course, your Twitter handle.
-  avatar: ./avatars/mack-mansouri.jpg
   social:
     - url: https://github.com
     - url: https://github.com

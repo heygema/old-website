@@ -7,7 +7,6 @@
   featured: true
   avatar: ./avatars/gema.jpg
   social:
-    - url: https://stackoverflow.com
     - url: https://twitter.com/heygema
     - url: https://github.com/heygema
     - url: mailto:gema@posteo.net

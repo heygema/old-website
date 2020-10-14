@@ -282,5 +282,4 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       originalPath: '/about',
     },
   });
-
 };

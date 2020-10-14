@@ -1,12 +1,12 @@
 require("dotenv").config();
 
 const siteMetadata = {
-  title: `Novela by Narative`,
+  title: `Pumpkin Peanut`,
   name: `Gema`,
   siteUrl: `https://heygema.github.io`,
   description: `Gema Anggada's personal internet space for blogging and bio.`,
   hero: {
-    heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
+    heading: `Welcome!`,
     maxWidth: 652,
   },
   social: [

@@ -1,9 +1,22 @@
+- name: Gema Anggada
+  bio: |
+    I'm the owner of this site. Though
+    Guest posts are welcome.
+    please mail me in the link below (email icon)
+    hope you enjoy!
+  avatar: ./avatars/dennis-brotzky.jpg
+  featured: true
+  social:
+    - url: https://stackoverflow.com
+    - url: https://twitter.com/heygema
+    - url: https://github.com/heygema
+    - url: mailto:gema@posteo.net
+
 - name: Dennis Brotzky
   bio: |
     Written by You. This is where your author bio lives. Share your work, your
     joys and of course, your Twitter handle.
   avatar: ./avatars/dennis-brotzky.jpg
-  featured: true
   social:
     - url: https://unsplash.com
     - url: https://stackoverflow.com

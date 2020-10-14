@@ -104,11 +104,10 @@ const AboutPage: Template = ({ location }) => {
               👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
               Jakarta, Indonesia. I have experiences in developing website and
               mobile apps using the power of React & React Native! My main
-              programming language is Javascript, but always interested to work
-              in other languages such as Kotlin, ReasonML, or Python. Life
-              aside, I also love playing piano and traveling. I'm planning to
-              write about variety of topics here including but not limited to
-              programming.
+              programming language is Javascript, while also love playing with
+              other languages such as Kotlin, ReasonML, or Python. Life aside, I
+              also love playing piano and traveling. I'm planning to write about
+              variety of topics here including but not limited to programming.
               <br />
               Meanwhile, thanks for coming by & I hope you enjoy!
             </P>
@@ -169,6 +168,11 @@ const Row = styled.div`
   flex: 1;
   min-height: 45vh;
   flex-direction: row;
+
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+
+  opacity: 1;
 
   ${mediaqueries.tablet`
     flex-direction: column-reverse;

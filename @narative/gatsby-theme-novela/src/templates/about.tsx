@@ -82,7 +82,7 @@ const GooeyInner3 = styled(GooeyContainer)`
   animation: back-rotate 7s linear infinite;
 `;
 
-const greetings = ['Hello!', 'Halo!', 'Приве́т!', 'Bonjour!'];
+const greetings = ['Hello!', 'Halo!', 'Приве́т!', 'Bonjour!', 'Xin Chào!'];
 
 const AboutPage: Template = ({ location }) => {
   return (
@@ -94,38 +94,39 @@ const AboutPage: Template = ({ location }) => {
       />
       <Section>
         <Row>
-          <div css={{ flex: 1, paddingTop: 60 }}>
-            <div css={{ minHeight: 100 }}>
+          <BioContainer>
+            <HelloDiv>
               <Ketikin texts={greetings} interval={180}>
                 {value => <Title>{value || '_'}</Title>}
               </Ketikin>
-            </div>
+            </HelloDiv>
             <P>
               👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
               Jakarta, Indonesia. I have experiences in developing website and
-              mobile apps using the power of React & React Native! My main
-              programming language is Javascript, while also love playing with
-              other languages such as Kotlin, ReasonML, or Python. Life aside, I
-              also love playing piano and traveling. I'm planning to write about
-              variety of topics here including but not limited to programming.
+              mobile apps using the power of{' '}
+              <BoldLink href="https://reactjs.org/" target="_blank">
+                React
+              </BoldLink>{' '}
+              &{' '}
+              <BoldLink href="https://reactnative.dev/" target="_blank">
+                React Native
+              </BoldLink>{' '}
+              ! My main programming language is Javascript, while also love
+              playing with other languages such as Kotlin, ReasonML, or Python.
+              Life aside, I also love playing piano and traveling. I'm planning
+              to write about variety of topics here including but not limited to
+              programming.
               <br />
               Meanwhile, thanks for coming by & I hope you enjoy!
             </P>
-          </div>
-          <div
-            css={{
-              display: 'flex',
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
+          </BioContainer>
+          <ProfilePictureDiv>
             <Goeey />
-          </div>
+          </ProfilePictureDiv>
         </Row>
         <Row>
           <div
-            css={{
+            style={{
               flex: 1,
               flexDirection: 'column',
               display: 'flex',
@@ -134,7 +135,7 @@ const AboutPage: Template = ({ location }) => {
             }}
           >
             <div
-              css={{
+              style={{
                 display: 'flex',
                 justifyContent: 'center',
               }}
@@ -142,7 +143,7 @@ const AboutPage: Template = ({ location }) => {
               <Title> Featured Works </Title>
             </div>
             <div
-              css={{
+              style={{
                 flex: 1,
                 minHeight: 400,
                 zIndex: 100,
@@ -162,6 +163,22 @@ const AboutPage: Template = ({ location }) => {
 };
 
 export default AboutPage;
+
+const BioContainer = styled.div`
+  flex: 1;
+  padding-top: 60px;
+`;
+
+const HelloDiv = styled.div`
+  margin-bottom: 50px;
+`;
+
+const ProfilePictureDiv = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Row = styled.div`
   display: flex;
@@ -199,11 +216,11 @@ const Title = styled(Headings.h1)`
   `}
 
   ${mediaqueries.tablet`
-    font-size: 24px;  
+    font-size: 3rem;
   `}
 
   ${mediaqueries.phablet`
-    font-size: 22px;  
+    font-size: 3rem;
     padding: 30px 20px 0;
     margin-bottom: 10px;
   `}
@@ -220,6 +237,13 @@ const NothingYetContainer = styled(Paragraph)`
     margin-bottom: 20px;
   `}
 `;
+
+const BoldLink = styled.a`
+  color: ${p => p.theme.colors.articleText};
+  font-weight: 700;
+`;
+
+BoldLink.defaultProps = { target: '_blank' };
 
 const P = styled(Paragraph)<{
   narrow: boolean;

@@ -57,7 +57,7 @@ const SharePageButton: React.FC<{}> = () => {
   function copyToClipboardOnClick() {
     if (hasCopied) return;
 
-    copyToClipboard(window.location.href);
+    copyToClipboard(win.location.href);
     setHasCopied(true);
 
     setTimeout(() => {
@@ -81,6 +81,16 @@ const SharePageButton: React.FC<{}> = () => {
   );
 };
 
+const loc = typeof location === 'undefined' ? { pathname: '' } : location;
+const win =
+  typeof window === 'undefined'
+    ? {
+        location: {
+          href: '',
+        },
+      }
+    : window;
+
 const NavigationHeader: React.FC<{}> = () => {
   const [showBackArrow, setShowBackArrow] = useState<boolean>(false);
   const [previousPath, setPreviousPath] = useState<string>('/');
@@ -90,7 +100,7 @@ const NavigationHeader: React.FC<{}> = () => {
   const fill = colorMode === 'dark' ? '#fff' : '#000';
   const { rootPath, basePath } = sitePlugin.pluginOptions;
 
-  const isAboutPage = location.pathname.includes('about');
+  const isAboutPage = loc.pathname.includes('about');
 
   useEffect(() => {
     const { width } = getWindowDimensions();
@@ -100,8 +110,8 @@ const NavigationHeader: React.FC<{}> = () => {
     const previousPathWasHomepage =
       prev === (rootPath || basePath) || (prev && prev.includes('/page/'));
     const currentPathIsHomepage =
-      location.pathname === (rootPath || basePath) ||
-      location.pathname.includes('/page/');
+      loc.pathname === (rootPath || basePath) ||
+      loc.pathname.includes('/page/');
 
     setShowBackArrow(
       previousPathWasHomepage && !currentPathIsHomepage && width <= phablet,

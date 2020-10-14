@@ -9,7 +9,7 @@ import mediaqueries from '@styles/media';
 
 import { Template } from '@types';
 
-const AboutPage: Template = ({ location }) => {
+const NotFoundPage: Template = ({ location }) => {
   return (
     <Layout>
       <SEO
@@ -26,7 +26,7 @@ const AboutPage: Template = ({ location }) => {
   );
 };
 
-export default AboutPage;
+export default NotFoundPage;
 
 const Centered = styled(Paragraph)`
   display: flex;

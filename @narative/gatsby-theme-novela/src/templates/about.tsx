@@ -82,7 +82,14 @@ const GooeyInner3 = styled(GooeyContainer)`
   animation: back-rotate 7s linear infinite;
 `;
 
-const greetings = ['Hello!', 'Halo!', 'Приве́т!', 'Bonjour!', 'Xin Chào!'];
+const greetings = [
+  'Hello',
+  'こんにちは',
+  'Halo',
+  'Приве́т',
+  'Bonjour',
+  'Xin Chào',
+].map(text => text + '!');
 
 function LinkText({ href = '', text = '' }) {
   return (

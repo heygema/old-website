@@ -56,7 +56,17 @@ const Footer: React.FC<{}> = () => {
         <HoritzontalRule />
         <FooterContainer>
           <FooterText>
-            © {copyrightDate} {name}, themes based on Novela by{' '}
+            © {copyrightDate} {name}, themes based on{' '}
+            <ThemeReference
+              href="https://novela.narative.co/"
+              target="_blank"
+              data-a11y="false"
+              title="Navigate to theme"
+              aria-label="Navigate to theme"
+            >
+              Novela
+            </ThemeReference>{' '}
+            by{' '}
             <ThemeReference
               href="https://www.narative.co/"
               target="_blank"

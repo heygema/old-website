@@ -42,7 +42,7 @@ const Subscription: React.FC<{}> = () => {
     <Section narrow>
       <SubscriptionContainer>
         <Content>
-          <Heading>Subscribe to my posts</Heading>
+          <Heading>Join my mailing list</Heading>
           <Text>
             Keep in touch with my latest content and story! unsubscribe at
             anytime.

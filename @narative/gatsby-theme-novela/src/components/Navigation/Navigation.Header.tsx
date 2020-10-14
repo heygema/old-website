@@ -90,6 +90,8 @@ const NavigationHeader: React.FC<{}> = () => {
   const fill = colorMode === 'dark' ? '#fff' : '#000';
   const { rootPath, basePath } = sitePlugin.pluginOptions;
 
+  const isAboutPage = location.pathname.includes('about');
+
   useEffect(() => {
     const { width } = getWindowDimensions();
     const phablet = getBreakpointFromTheme('phablet');
@@ -138,13 +140,13 @@ const NavigationHeader: React.FC<{}> = () => {
           ) : (
             <>
               <LogoLink
-                to="/about"
+                to={isAboutPage ? '/' : '/about'}
                 data-a11y="false"
                 title="Navigate to about page"
                 aria-label="Navigate to about page"
                 back={showBackArrow ? 'true' : 'false'}
               >
-                <AboutText>About</AboutText>
+                <AboutText>{isAboutPage ? 'Home' : 'About'}</AboutText>
               </LogoLink>
               <SharePageButton />
               <DarkModeToggle />

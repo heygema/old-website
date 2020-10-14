@@ -10,9 +10,9 @@ export default props => (
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <script
+      {/* <script
         dangerouslySetInnerHTML={{ __html: `document.domain = "narative.co"` }}
-      />
+      /> */}
       {props.headComponents}
     </head>
     <body {...props.bodyAttributes}>

@@ -139,12 +139,13 @@ const AboutPage: Template = ({ location }) => {
             <P>
               👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
               Jakarta, Indonesia. I have experiences in developing website and
-              mobile apps using the power of {reactLink} & {reactNativeLink}! My
-              main programming language is Javascript, while also love playing
-              with other languages such as {kotlinLink}, {reasonMLLink}, or{' '}
-              {pythonLink}. Life aside, I also love playing {pianoLink} and{' '}
-              {travelingLink}. I'm planning to write about variety of topics
-              here including but not limited to programming.
+              mobile apps using the power of {reactLink} & {reactNativeLink}! I
+              use Javascript (Typescript these days) as my primary programming
+              language, while also love playing with other languages such as{' '}
+              {kotlinLink}, {reasonMLLink}, or {pythonLink}. Life aside, I also
+              love playing {pianoLink} and {travelingLink}. I'm planning to
+              write about variety of topics here including but not limited to
+              programming.
               <br />
               Meanwhile, thanks for coming by & I hope you enjoy!
             </P>

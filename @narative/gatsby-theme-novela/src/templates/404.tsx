@@ -10,15 +10,15 @@ import mediaqueries from '@styles/media';
 import { Template } from '@types';
 
 const NotFoundPage: Template = ({ location }) => {
-  const messages = [
-    ['order a pizza', 'https://paparonspizza.com/'],
-    ['buy a new Iphone', 'https://www.apple.com/iphone/'],
-    ['listen to Belle Chen', 'https://www.bellechen.com/'],
-  ];
+  const messages = new Map([
+    ['0', ['order a pizza', 'https://paparonspizza.com/']],
+    ['1', ['buy a new Iphone', 'https://www.apple.com/iphone/']],
+    ['2', ['listen to Belle Chen', 'https://www.bellechen.com/']],
+  ]);
 
-  let [suggestion, url] = (messages || [])[
-    Math.round(Math.random() * messages.length - 1)
-  ];
+  let random = Math.round(Math.random() * 2);
+
+  let [suggestion, url] = (messages || new Map()).get(random);
 
   return (
     <Layout>

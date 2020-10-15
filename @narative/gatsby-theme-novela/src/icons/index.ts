@@ -4,6 +4,7 @@ import Dribbble from './social/Dribbble.Icon';
 import DevTo from './social/DevTo.Icon';
 import Facebook from './social/Facebook.Icon';
 import Instagram from './social/Instagram.Icon';
+import Codepen from './social/Codepen.Icon';
 import Twitter from './social/Twitter.Icon';
 import LinkedIn from './social/LinkedIn.Icon';
 import Medium from './social/Medium.Icon';
@@ -37,6 +38,7 @@ export default {
   DevTo,
   Facebook,
   Instagram,
+  Codepen,
   Twitter,
   LinkedIn,
   Medium,

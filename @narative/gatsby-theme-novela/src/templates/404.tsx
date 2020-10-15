@@ -9,15 +9,15 @@ import mediaqueries from '@styles/media';
 
 import { Template } from '@types';
 
-const sponsors = [
-  ['order a pizza', 'https://paparonspizza.com/'],
-  ['buy a new Iphone', 'https://www.apple.com/iphone/'],
-  ['listen to Belle Chen', 'https://www.bellechen.com/'],
-];
-
 const NotFoundPage: Template = ({ location }) => {
-  let [suggestion, url] = sponsors[
-    Math.round(Math.random() * sponsors.length - 1)
+  const messages = [
+    ['order a pizza', 'https://paparonspizza.com/'],
+    ['buy a new Iphone', 'https://www.apple.com/iphone/'],
+    ['listen to Belle Chen', 'https://www.bellechen.com/'],
+  ];
+
+  let [suggestion, url] = (messages || [])[
+    Math.round(Math.random() * messages.length - 1)
   ];
 
   return (

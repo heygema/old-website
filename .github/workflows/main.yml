@@ -14,7 +14,11 @@ jobs:
         with:
           node-version: '12.x'
 
-      - name: Configure git credentials
+      - name: Configure git email
+        run: git config --global user.email "gem.anggada@gmail.com"
+      - name: Configure git name
+        run: git config --global user.name "heygema"
+      - name: Configure git token
         run: git config --global github.token ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get yarn cache directory path

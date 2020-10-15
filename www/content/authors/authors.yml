@@ -1,12 +1,10 @@
 - name: Gema Anggada
   bio: |
     I'm the owner of this site. Though
-    Guest posts are welcome.
-    please mail me in the link below (email icon)
+    guest posts are welcome.
+    just email me from the link below (email icon)
     hope you enjoy!
   featured: true
   avatar: ./avatars/gema.jpg
   social:
-    - url: https://twitter.com/heygema
-    - url: https://github.com/heygema
     - url: mailto:gema@posteo.net

@@ -135,7 +135,7 @@ const NavigationHeader: React.FC<{}> = () => {
             </BackArrowIconContainer>
           )}
 
-          <Title>Gema Anggada</Title>
+          <Title>👻 Gema</Title>
           <Hidden>Navigate back to the homepage</Hidden>
         </LogoLink>
         <NavControls>

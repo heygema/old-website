@@ -1,22 +1,26 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Section from '@components/Section';
-import Paragraph from '@components/Paragraph';
-import SEO from '@components/SEO';
-import Layout from '@components/Layout';
-import mediaqueries from '@styles/media';
+import Section from '@narative/gatsby-theme-novela/src/components/Section';
+import Paragraph from '@narative/gatsby-theme-novela/src/components/Paragraph';
+import SEO from '@narative/gatsby-theme-novela/src/components/SEO';
+import Layout from '@narative/gatsby-theme-novela/src/components/Layout';
+import mediaqueries from '@narative/gatsby-theme-novela/src/styles/media';
 
-import { Template } from '@types';
+import { Template } from '@narative/gatsby-theme-novela/src/types';
 
 const NotFoundPage: Template = ({ location }) => {
   const messages = new Map([
     ['0', ['order a pizza', 'https://paparonspizza.com/']],
     ['1', ['buy a new Iphone', 'https://www.apple.com/iphone/']],
     ['2', ['listen to Belle Chen', 'https://www.bellechen.com/']],
+    [
+      '3',
+      ['Watch TwoSetViolin', 'https://www.youtube.com/watch?v=Jhep4gvcC1E'],
+    ],
   ]);
 
-  let random = Math.round(Math.random() * 2);
+  let random = Math.round(Math.random() * 3);
 
   let [suggestion, url] = (messages || new Map()).get(String(random));
 
@@ -30,10 +34,13 @@ const NotFoundPage: Template = ({ location }) => {
       <Section>
         <Row>
           <Centered>
-            {`😅 404! Oops, nothing here! 🌈 I suggest you-`}
-            <BoldLink href={url} target="_blank">
-              {` ${suggestion}`}
-            </BoldLink>
+            <P>{`😅 404! Oops, nothing here! 🌈`}</P>
+            <P>
+              I suggest you
+              <BoldLink href={url} target="_blank">
+                {` ${suggestion}`}
+              </BoldLink>
+            </P>
           </Centered>
         </Row>
       </Section>
@@ -52,22 +59,32 @@ const BoldLink = styled.a`
   }
 `;
 
+const P = styled(Paragraph)<{
+  narrow: boolean;
+}>`
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+
+  ${mediaqueries.phablet`
+    font-size: 1.8rem;
+    margin-bottom; 15px;
+  `}
+
+  ${mediaqueries.phablet`
+    margin-bottom: 20px;
+    -webkit-line-clamp: 3;
+  `}
+`;
+
 const Centered = styled(Paragraph)`
+  flex-direction: column;
   display: flex;
   flex: 1;
   min-height: 400px;
   z-index: 100;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 2.3rem;
-  ${mediaqueries.phablet`
-    font-size: 1.8rem;
-    margin-bottom; 15px;
-  `}
-  ${mediaqueries.phablet`
-    margin-bottom: 20px;
-  `}
 `;
 
 const Row = styled.div`

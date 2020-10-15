@@ -179,6 +179,18 @@ const NavigationHeader: React.FC<{}> = () => {
               >
                 <AboutText>{isAboutPage ? 'Home' : 'About'}</AboutText>
               </LogoLink>
+              <a
+                href={'/rss.xml'}
+                target="_blank"
+                data-a11y="false"
+                title="Subscribe to RSS"
+                aria-label="Subscribe to RSS"
+                style={{
+                  marginLeft: 13,
+                }}
+              >
+                <AboutText>RSS</AboutText>
+              </a>
               <SharePageButton />
               <DarkModeToggle />
             </>
@@ -210,7 +222,7 @@ const AboutText = styled(Headings.h4)`
 
   ${mediaqueries.phablet`
     font-size: 1.3rem;  
-    padding: 30px 20px 0;
+    padding: 30px 5px 0;
     margin-bottom: 28px;
     -webkit-line-clamp: 3;
   `}
@@ -224,16 +236,18 @@ const Title = styled(Headings.h2)`
   transition: color 0.3s ease-in-out;
 
   ${mediaqueries.desktop`
+    padding: 25px 20px 0;
     margin-bottom: 15px;
   `}
 
   ${mediaqueries.tablet`
+    padding: 13px 20px 0;
     font-size: 24px;  
   `}
 
   ${mediaqueries.phablet`
-    font-size: 22px;  
-    padding: 30px 20px 0;
+    font-size: 18px;  
+    padding: 28px 20px 0;
     margin-bottom: 28px;
     -webkit-line-clamp: 3;
   `}

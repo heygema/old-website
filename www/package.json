@@ -18,6 +18,7 @@
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-source-filesystem": "^2.1.9",
+    "ketikin": "^0.1.51",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

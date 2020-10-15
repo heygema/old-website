@@ -9,7 +9,17 @@ import mediaqueries from '@styles/media';
 
 import { Template } from '@types';
 
+const sponsors = [
+  ['order a pizza', 'https://paparonspizza.com/'],
+  ['buy a new Iphone', 'https://www.apple.com/iphone/'],
+  ['listen to Belle Chen', 'https://www.bellechen.com/'],
+];
+
 const NotFoundPage: Template = ({ location }) => {
+  let [suggestion, url] = sponsors[
+    Math.round(Math.random() * sponsors.length - 1)
+  ];
+
   return (
     <Layout>
       <SEO
@@ -19,7 +29,12 @@ const NotFoundPage: Template = ({ location }) => {
       />
       <Section>
         <Row>
-          <Centered>404. Oops, nothing here.</Centered>
+          <Centered>
+            😅 404! Oops, nothing here! 🌈 I suggest you{' '}
+            <BoldLink href={url} target="_blank">
+              {suggestion}
+            </BoldLink>
+          </Centered>
         </Row>
       </Section>
     </Layout>
@@ -27,6 +42,15 @@ const NotFoundPage: Template = ({ location }) => {
 };
 
 export default NotFoundPage;
+
+const BoldLink = styled.a`
+  color: ${p => p.theme.colors.articleText};
+  font-weight: 700;
+
+  &:hover {
+    color: ${p => p.theme.colors.accent};
+  }
+`;
 
 const Centered = styled(Paragraph)`
   display: flex;

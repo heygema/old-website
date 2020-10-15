@@ -67,6 +67,11 @@ const ImageInsideGooey = styled(Image)`
     margin-left: 70px;
   `}
 
+  ${mediaqueries.tablet`
+    height: 180px;
+    margin-left: 50px;
+  `}
+
   ${mediaqueries.phablet`
     height: 180px;
     margin-left: 50px;
@@ -80,6 +85,11 @@ const GooeyContainer = styled.div`
   ${mediaqueries.desktop`
     height: 300px;
     width: 300px;
+  `}
+
+  ${mediaqueries.tablet`
+      height: 200px;
+      width: 200px;
   `}
 
   ${mediaqueries.phablet`
@@ -145,7 +155,7 @@ const AboutPage: Template = ({ location }) => {
             </HelloDiv>
             <P>
               👋 My name is Gema Anggada! I am a Software Engineer (He/Him) who
-              grew up Jakarta, Indonesia. I've work with
+              grew up in Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create

@@ -17,8 +17,8 @@ jobs:
       - name: Configure git credentials
       - uses: actions/checkout@v2
         with:
-           repository: 'heygema/heygema.github.io'
-           token: '${{ secrets.TOKEN }}'
+          repository: 'heygema/heygema.github.io'
+          token: '${{ secrets.TOKEN }}'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path

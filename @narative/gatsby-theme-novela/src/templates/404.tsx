@@ -29,11 +29,10 @@ const NotFoundPage: Template = ({ location }) => {
       />
       <Section>
         <Row>
-          <Centered>😅 404! Oops, nothing here! 🌈</Centered>
           <Centered>
-            I suggest you{'  '}
+            😅 404! Oops, nothing here! 🌈 I suggest you
             <BoldLink href={url} target="_blank">
-              {suggestion}
+              {` ${suggestion}`}
             </BoldLink>
           </Centered>
         </Row>

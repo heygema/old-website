@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const siteMetadata = {
-  title: `Gema`,
+  title: `Gema Anggada`,
   name: `Gema`,
   siteUrl: `https://heygema.github.io`,
   description: `Gema Anggada's personal internet space for blogging and bio.`,
@@ -18,6 +18,9 @@ const siteMetadata = {
     },
     {
       url: `https://instagram.com/heygema`,
+    },
+    {
+      url: `https://codepen.io/heygema`,
     },
     {
       url: 'https://www.linkedin.com/in/heygema/'
@@ -52,8 +55,8 @@ const plugins = [
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `Novela by Narative`,
-      short_name: `Novela`,
+      name: `Gema Anggada`,
+      short_name: `Gema`,
       start_url: `/`,
       background_color: `#fff`,
       theme_color: `#fff`,

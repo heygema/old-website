@@ -52,19 +52,40 @@ const Goeey: React.FC<{}> = () => {
         </svg>
       </GooeyInner3>
 
-      <Image
-        css={{ position: 'absolute', marginLeft: 90 }}
-        height={320}
-        src={require('../images/avatar_web.png')}
-      />
+      <ImageInsideGooey src={require('../images/avatar_web.png')} />
     </GooeyContainer>
   );
 };
 
+const ImageInsideGooey = styled(Image)`
+  position: absolute;
+  margin-left: 90px;
+  height: 320px;
+
+  ${mediaqueries.desktop`
+    height: 280px;
+    margin-left: 70px;
+  `}
+
+  ${mediaqueries.phablet`
+    height: 280px;
+    margin-left: 70px;
+  `}
+`;
+
 const GooeyContainer = styled.div`
   height: 360px;
   width: 360px;
-  filter: blur(0.3px);
+
+  ${mediaqueries.desktop`
+    height: 300px;
+    width: 300px;
+  `}
+
+  ${mediaqueries.phablet`
+      height: 300px;
+      width: 300px;
+  `}
 `;
 
 const GooeyInner1 = styled(GooeyContainer)`
@@ -100,26 +121,13 @@ function LinkText({ href = '', text = '' }) {
 }
 
 const AboutPage: Template = ({ location }) => {
-  const reactLink = <LinkText href="https://reactjs.org/" text="React" />;
+  const makeLink = (href, text) => <LinkText href={href} text={text} />;
 
-  const reactNativeLink = (
-    <LinkText href=" https://reactnative.dev/" text="React Native" />
-  );
+  const pythonLink = 'https://www.python.org/';
 
-  const reasonMLLink = (
-    <LinkText href="https://reasonml.github.io/" text="ReasonML" />
-  );
+  const pianoLink = 'https://en.wikipedia.org/wiki/Piano';
 
-  const kotlinLink = <LinkText href="https://kotlinlang.org/" text="Kotlin" />;
-
-  const pythonLink = <LinkText href="https://www.python.org/" text="Python" />;
-
-  const pianoLink = (
-    <LinkText href="https://en.wikipedia.org/wiki/Piano" text="piano" />
-  );
-  const travelingLink = (
-    <LinkText href="https://en.wikipedia.org/wiki/Travel" text="traveling" />
-  );
+  const travelingLink = 'https://en.wikipedia.org/wiki/Travel';
 
   return (
     <Layout>
@@ -137,14 +145,17 @@ const AboutPage: Template = ({ location }) => {
               </Ketikin>
             </HelloDiv>
             <P>
-              👋 My name is Gema! I am a Software Engineer (He/Him) who grew up
-              Jakarta, Indonesia. I have experiences in developing website and
-              mobile apps using the power of {reactLink} & {reactNativeLink}! I
-              use Javascript (Typescript these days) as my primary programming
-              language, while also love playing with other languages such as{' '}
-              {kotlinLink}, {reasonMLLink}, or {pythonLink}. Life aside, I also
-              love playing {pianoLink} and {travelingLink}. I'm planning to
-              write about variety of topics here including but not limited to
+              👋 My name is Gema Anggada! I am a Software Engineer (He/Him) who
+              grew up Jakarta, Indonesia. I've work with
+              {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
+              {makeLink('https://reactjs.org/', 'React')} &{' '}
+              {makeLink('https://reactnative.dev', 'React Native')} to create
+              websites and mobile apps, while also love to play around with{' '}
+              {makeLink('https://reasonml.github.io', 'ReasonML')}, or{' '}
+              {makeLink('https://python.org', 'Python')}. , I also love{' '}
+              {makeLink(pianoLink, 'Piano')} and{' '}
+              {makeLink(travelingLink, 'Traveling')}. This is a place to pour my
+              thoughts about variety of topics, including but not limited to
               programming.
               <br />
               Meanwhile, thanks for coming by & I hope you enjoy!
@@ -250,7 +261,7 @@ const Title = styled(Headings.h1)`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 3rem;
+    font-size: 2.8rem;
     padding: 30px 20px 0;
     margin-bottom: 10px;
   `}

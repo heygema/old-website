@@ -143,22 +143,20 @@ export const globalStyles = css`
     background: transparent !important;
   }
 
-  /* Safari 4.0 - 8.0 */
-  @-webkit-keyframes infiniteRotate {
-    0% {
-      -webkit-transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-
   /* Standard syntax */
   @keyframes infinite-rotate {
     0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }
@@ -166,21 +164,41 @@ export const globalStyles = css`
   /* Standard syntax */
   @keyframes back-rotate {
     0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     100% {
+      -webkit-transform: rotate(-360deg);
+      -moz-transform: rotate(-360deg);
+      -ms-transform: rotate(-360deg);
+      -o-transform: rotate(-360deg);
       transform: rotate(-360deg);
     }
   }
 
   @keyframes infinite-scale {
     0% {
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
       transform: scale(0.8);
     }
     50% {
-      transform: scale(1.1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
     }
     100% {
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
       transform: scale(0.8);
     }
   }

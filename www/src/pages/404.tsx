@@ -59,9 +59,7 @@ const BoldLink = styled.a`
   }
 `;
 
-const P = styled(Paragraph)<{
-  narrow: boolean;
-}>`
+const P = styled(Paragraph)`
   text-align: center;
   font-size: 2.3rem;
   margin-bottom: 10px;

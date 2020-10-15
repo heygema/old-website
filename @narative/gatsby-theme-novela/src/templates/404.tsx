@@ -18,7 +18,7 @@ const NotFoundPage: Template = ({ location }) => {
 
   let random = Math.round(Math.random() * 2);
 
-  let [suggestion, url] = (messages || new Map()).get(random);
+  let [suggestion, url] = (messages || new Map()).get(String(random));
 
   return (
     <Layout>

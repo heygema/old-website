@@ -152,7 +152,7 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('https://reactnative.dev', 'React Native')} to create
               websites and mobile apps, while also love to play around with{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')}, or{' '}
-              {makeLink('https://python.org', 'Python')}. , I also love{' '}
+              {makeLink('https://python.org', 'Python')}. In life, I love{' '}
               {makeLink(pianoLink, 'Piano')} and{' '}
               {makeLink(travelingLink, 'Traveling')}. This is a place to pour my
               thoughts about variety of topics, including but not limited to

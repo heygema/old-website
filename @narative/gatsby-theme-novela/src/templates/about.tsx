@@ -132,7 +132,8 @@ const AboutPage: Template = ({ location }) => {
       <SEO
         pathname={location.pathname}
         title="Gema Anggada"
-        description="Gema's personal site"
+        description="👋 I am a Software Engineer (He/Him) who
+        grew up Jakarta, Indonesia."
       />
       <Section>
         <Row>

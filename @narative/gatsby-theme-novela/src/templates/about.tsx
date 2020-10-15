@@ -68,8 +68,8 @@ const ImageInsideGooey = styled(Image)`
   `}
 
   ${mediaqueries.phablet`
-    height: 280px;
-    margin-left: 70px;
+    height: 180px;
+    margin-left: 50px;
   `}
 `;
 
@@ -83,8 +83,8 @@ const GooeyContainer = styled.div`
   `}
 
   ${mediaqueries.phablet`
-      height: 300px;
-      width: 300px;
+      height: 200px;
+      width: 200px;
   `}
 `;
 
@@ -122,8 +122,6 @@ function LinkText({ href = '', text = '' }) {
 
 const AboutPage: Template = ({ location }) => {
   const makeLink = (href, text) => <LinkText href={href} text={text} />;
-
-  const pythonLink = 'https://www.python.org/';
 
   const pianoLink = 'https://en.wikipedia.org/wiki/Piano';
 

@@ -23,6 +23,8 @@ export default props => (
         dangerouslySetInnerHTML={{ __html: props.body }}
       />
       {props.postBodyComponents}
+      <script data-goatcounter="https://gema.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
     </body>
   </html>
 );

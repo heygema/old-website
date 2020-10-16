@@ -28,7 +28,7 @@
     "eslint-plugin-unicorn": "^10.0.0",
     "husky": "^3.0.4",
     "lerna": "^3.16.4",
-    "prettier": "^1.18.2"
+    "prettier": "^2.1.2"
   },
   "eslintConfig": {
     "extends": [
@@ -56,7 +56,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "//disabled pre-commit": "yarn lint"
     }
   },
   "prettier": {

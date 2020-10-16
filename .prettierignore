@@ -1,13 +1,11 @@
 # Ignore everything:
-/*
+# /*
 
 # Except these root files:
 !CONTRIBUTING.md
 !LICENSE
 !README.md
 
-# Except these sources for the www workspace
-!/www/src
 !/www/content
 !/www/public
 !/www/static
@@ -15,3 +13,4 @@
 
 # Ignore nothing for the theme workspace
 !/@narative
+

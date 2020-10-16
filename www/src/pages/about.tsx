@@ -13,13 +13,14 @@ import mediaqueries from '@narative/gatsby-theme-novela/src/styles/media';
 
 import { Template } from '@narative/gatsby-theme-novela/src/types';
 
-
 const greetings = [
   'Hello',
   'こんにちは',
   'Halo',
   'Приве́т',
   'Bonjour',
+  '你好',
+
   'Xin Chào',
 ].map(text => text + '!');
 
@@ -62,13 +63,11 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('https://reactnative.dev', 'React Native')} to create
               websites and mobile apps, while also love to play around with{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')}, or{' '}
-              {makeLink('https://python.org', 'Python')}. In life, I love{' '}
-              {makeLink(pianoLink, 'Piano')} and{' '}
+              {makeLink('https://python.org', 'Python')}. Generally, I also love
+              things about {makeLink(pianoLink, 'Piano')} and{' '}
               {makeLink(travelingLink, 'Traveling')}. This is a place to pour my
               thoughts about variety of topics, including but not limited to
               programming.
-              <br />
-              Meanwhile, thanks for coming by & I hope you enjoy!
             </P>
           </BioContainer>
           <ProfilePictureDiv>
@@ -103,7 +102,7 @@ const AboutPage: Template = ({ location }) => {
                 alignItems: 'center',
               }}
             >
-              <NothingYetContainer> Nothing yet.</NothingYetContainer>
+              <NothingYetContainer>Nothing yet.</NothingYetContainer>
             </div>
           </div>
         </Row>
@@ -200,9 +199,7 @@ const BoldLink = styled.a`
 
 BoldLink.defaultProps = { target: '_blank' };
 
-const P = styled(Paragraph)<{
-  narrow: boolean;
-}>`
+const P = styled(Paragraph)`
   font-size: 2.3rem;
   margin-bottom: 10px;
   max-width: ${p => (p.narrow ? '415px' : '515px')};

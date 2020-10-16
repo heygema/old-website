@@ -1,5 +1,6 @@
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import React, { useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Section from '@components/Section';
 import Headings from '@components/Headings';
@@ -7,10 +8,36 @@ import Headings from '@components/Headings';
 import styled from '@emotion/styled';
 import mediaqueries from '@styles/media';
 
+const siteQuery = graphql`
+  {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+
 const Subscription: React.FC<{}> = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const {
+    sitePlugin,
+    allSite: {
+      edges: [edge],
+    },
+  } = useStaticQuery(siteQuery);
+
+  let {
+    node: {
+      siteMetadata: { name },
+    },
+  } = edge;
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -42,10 +69,9 @@ const Subscription: React.FC<{}> = () => {
     <Section narrow>
       <SubscriptionContainer>
         <Content>
-          <Heading>Join my mailing list</Heading>
+          <Heading>Subscribe to {name}</Heading>
           <Text>
-            Keep in touch with my latest content and story! unsubscribe at
-            anytime.
+            get the latest update! never unsubscribe! this is the way.
           </Text>
           <Form onSubmit={handleSubmit} hasError={error}>
             <Input

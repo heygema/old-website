@@ -15,6 +15,22 @@ export const globalStyles = css`
   }
 
   @font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'),
+      format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Crimson Text', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap'),
+      format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
     font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
       'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
       'Arial', sans-serif;

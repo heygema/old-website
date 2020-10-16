@@ -4,7 +4,7 @@ const siteMetadata = {
   title: `Gema Anggada`,
   name: `Gema`,
   navTitle: '👻 Gema',
-  siteUrl: `https://heygema.github.io`,
+  siteUrl: `https://gema.monster`,
   description: `Gema Anggada's personal internet space for blogging and bio.`,
   hero: {
     heading: `Welcome!`,

@@ -41,11 +41,12 @@ module.exports = ({
           ...rest
         }) => {
           siteMetadata.feed_url = siteMetadata.siteUrl + '/rss.xml';
-          siteMetadata.image_url =
-            siteMetadata.siteUrl + '/icons/icon-512x512.png';
+          // NOTE: disabled
+          // siteMetadata.image_url =
+          //   siteMetadata.siteUrl + '/icons/icon-512x512.png';
           const siteMetadataModified = siteMetadata;
           siteMetadataModified.feed_url = `${siteMetadata.siteUrl}/rss.xml`;
-          siteMetadataModified.image_url = `${siteMetadata.siteUrl}/icons/icon-512x512.png`;
+          // siteMetadataModified.image_url = `${siteMetadata.siteUrl}/icons/icon-512x512.png`;
 
           return {
             ...siteMetadataModified,

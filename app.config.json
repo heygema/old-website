@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "blog",
+      "script": "yarn",
+      "interpreter": "none",
+      "args": "dev --port 8091"
+    }
+  ]
+}

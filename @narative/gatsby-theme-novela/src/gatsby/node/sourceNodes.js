@@ -4,6 +4,7 @@ module.exports = ({ actions }) => {
       id: ID!
       slug: String!
       title: String!
+      tags: [String!]!
       date: Date! @dateformat
       author: String!
       excerpt(pruneLength: Int = 140): String!

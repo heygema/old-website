@@ -98,6 +98,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
         ),
       ),
       title: node.frontmatter.title,
+      tags: node.frontmatter.tags,
       subscription: node.frontmatter.subscription !== false,
       canonical_url: node.frontmatter.canonical_url,
     };

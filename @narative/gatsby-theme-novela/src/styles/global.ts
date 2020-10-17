@@ -1,5 +1,51 @@
 import { css } from '@emotion/core';
 
+const linkStrokeStuff = `
+:root {
+  --text: #2B3044;
+  --line: #BBC1E1;
+  --line-active: #275EFE;
+}
+
+.sketchLink {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 var(--spacing, 0px);
+  -webkit-transition: margin .25s;
+  transition: margin .25s;
+}
+
+.sketchLink > svg {
+  width: 76px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translate(-50%, 7px) translateZ(0);
+          transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  -webkit-transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+
+ .sketchLink:hover {
+  --spacing: 4px;
+  --stroke: var(--line-active);
+  --stroke-delay: .1s;
+  --offset: 180px;
+  stroke-width: 2px;
+}
+
+
+`;
+
 export const globalStyles = css`
   /**
    * Thanks to Benjamin De Cock
@@ -202,4 +248,5 @@ export const globalStyles = css`
       transform: scale(0.8);
     }
   }
+  ${linkStrokeStuff}
 `;

@@ -182,6 +182,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
    */
   log('Creating', 'article posts');
   articles.forEach((article, index) => {
+
     // Match the Author to the one specified in the article
     let authorsThatWroteTheArticle;
     try {
@@ -225,6 +226,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         slug: article.slug,
         id: article.id,
         title: article.title,
+        tags: article.tags,
         canonicalUrl: article.canonical_url,
         mailchimp,
         next,

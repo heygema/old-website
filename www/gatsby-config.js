@@ -18,9 +18,6 @@ const siteMetadata = {
       url: `https://github.com/heygema`,
     },
     {
-      url: `https://instagram.com/heygema`,
-    },
-    {
       url: `https://codepen.io/heygema`,
     },
     {

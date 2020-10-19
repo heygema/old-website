@@ -6,17 +6,11 @@ import Image from '@components/Image';
 import mediaqueries from '@styles/media';
 
 const Goeey: React.FC<{}> = () => {
-  const [colorMode] = useColorMode();
-  const isDark = colorMode === `dark`;
-
-  const gooeyColor = isDark ? '#E9DAAC' : '#6166DC';
-
   return (
     <GooeyContainer>
       <GooeyInner1>
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill={gooeyColor}
+          <FilledPath
             d="M62.4,-35.6C72.6,-18.4,66.8,8.4,53.8,28.5C40.7,48.6,20.4,62,-0.9,62.5C-22.2,63,-44.5,50.8,-53.1,33.3C-61.6,15.8,-56.6,-7,-45.4,-24.7C-34.3,-42.4,-17.2,-55.1,4.5,-57.7C26.1,-60.3,52.2,-52.7,62.4,-35.6Z"
             transform="translate(100 100)"
           />
@@ -25,8 +19,7 @@ const Goeey: React.FC<{}> = () => {
 
       <GooeyInner2>
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill={gooeyColor}
+          <FilledPath
             d="M62.4,-35.6C72.6,-18.4,66.8,8.4,53.8,28.5C40.7,48.6,20.4,62,-0.9,62.5C-22.2,63,-44.5,50.8,-53.1,33.3C-61.6,15.8,-56.6,-7,-45.4,-24.7C-34.3,-42.4,-17.2,-55.1,4.5,-57.7C26.1,-60.3,52.2,-52.7,62.4,-35.6Z"
             transform="translate(100 100)"
           />
@@ -35,8 +28,7 @@ const Goeey: React.FC<{}> = () => {
 
       <GooeyInner3>
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill={gooeyColor}
+          <FilledPath
             d="M62.4,-35.6C72.6,-18.4,66.8,8.4,53.8,28.5C40.7,48.6,20.4,62,-0.9,62.5C-22.2,63,-44.5,50.8,-53.1,33.3C-61.6,15.8,-56.6,-7,-45.4,-24.7C-34.3,-42.4,-17.2,-55.1,4.5,-57.7C26.1,-60.3,52.2,-52.7,62.4,-35.6Z"
             transform="translate(100 100)"
           />
@@ -102,6 +94,10 @@ const GooeyInner2 = styled(GooeyContainer)`
 const GooeyInner3 = styled(GooeyContainer)`
   position: absolute;
   animation: back-rotate 7s linear infinite;
+`;
+
+const FilledPath = styled.path`
+  fill: ${(p) => p.theme.colors.accent};
 `;
 
 export default Goeey;

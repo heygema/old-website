@@ -22,7 +22,7 @@ const greetings = [
   '你好',
 
   'Xin Chào',
-].map(text => text + '!');
+].map((text) => text + '!');
 
 function LinkText({ href = '', text = '' }) {
   return (
@@ -52,7 +52,7 @@ const AboutPage: Template = ({ location }) => {
           <BioContainer>
             <HelloDiv>
               <Ketikin texts={greetings} interval={180}>
-                {value => <Title>{value || '_'}</Title>}
+                {(value) => <Title>{value || '_'}</Title>}
               </Ketikin>
             </HelloDiv>
             <P>
@@ -61,7 +61,7 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
-              websites and mobile apps, while also love to play around with{' '}
+              websites and mobile apps, while also try to hone my skills in{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')}, or{' '}
               {makeLink('https://python.org', 'Python')}. Generally, I also love
               things about {makeLink(pianoLink, 'Piano')} and{' '}
@@ -159,7 +159,7 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${(p) => p.theme.fonts.serif};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -189,11 +189,11 @@ const NothingYetContainer = styled(Paragraph)`
 `;
 
 const BoldLink = styled.a`
-  color: ${p => p.theme.colors.articleText};
+  color: ${(p) => p.theme.colors.articleText};
   font-weight: 700;
 
   &:hover {
-    color: ${p => p.theme.colors.accent};
+    color: ${(p) => p.theme.colors.accent};
   }
 `;
 
@@ -202,7 +202,7 @@ BoldLink.defaultProps = { target: '_blank' };
 const P = styled(Paragraph)`
   font-size: 2.3rem;
   margin-bottom: 10px;
-  max-width: ${p => (p.narrow ? '415px' : '515px')};
+  max-width: ${(p) => (p.narrow ? '415px' : '515px')};
   margin-left: 0px;
 
   ${mediaqueries.desktop`

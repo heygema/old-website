@@ -1,0 +1,16 @@
+import styled from '@emotion/styled';
+import { Link } from 'gatsby';
+
+export const Tag = styled(Link)`
+  color: ${(p) => p.theme.colors.grey};
+  font-weight: 700;
+  margin-left: 1rem;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  &:hover {
+    color: ${(p) => p.theme.colors.accent};
+  }
+`;

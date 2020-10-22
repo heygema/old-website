@@ -46,8 +46,6 @@ const Article: Template = ({ pageContext, location }) => {
 
   const { article, authors, next, tags } = pageContext;
 
-  console.log('tags ?', tags);
-
   useEffect(() => {
     const calculateBodySize = throttle(() => {
       const contentSection = contentSectionRef.current;
@@ -85,7 +83,7 @@ const Article: Template = ({ pageContext, location }) => {
   return (
     <Layout>
       <ArticleSEO article={article} authors={authors} location={location} />
-      <ArticleHero article={article} authors={authors} />
+      <ArticleHero article={article} authors={authors} tags={tags} />
       <ArticleAside contentHeight={contentHeight}>
         <Progress contentHeight={contentHeight} />
       </ArticleAside>

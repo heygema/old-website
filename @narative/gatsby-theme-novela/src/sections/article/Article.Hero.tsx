@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Headings from '@components/Headings';
+import { TagsContainer, Tag } from '@components/Tag';
 import Image, { ImagePlaceholder } from '@components/Image';
 
 import mediaqueries from '@styles/media';
@@ -12,9 +13,14 @@ import ArticleAuthors from './Article.Authors';
 interface ArticleHeroProps {
   article: IArticle;
   authors: IAuthor[];
+  tags?: boolean;
 }
 
-const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
+const ArticleHero: React.FC<ArticleHeroProps> = ({
+  article,
+  authors,
+  tags,
+}) => {
   const hasCoAUthors = authors.length > 1;
   const hasHeroImage =
     article.hero &&
@@ -31,6 +37,12 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
             {article.date} · {article.timeToRead} min read
           </ArticleMeta>
         </HeroSubtitle>
+        <TagsContainer>
+          {tags &&
+            article.tags.map((tag) => (
+              <Tag to={`/tag/${tag.toLowerCase()}`}>{`#${tag}`}</Tag>
+            ))}
+        </TagsContainer>
       </Header>
       <HeroImage id="ArticleImage__Hero">
         {hasHeroImage ? (
@@ -46,7 +58,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ article, authors }) => {
 export default ArticleHero;
 
 const Hero = styled.div`
-  ${p => mediaqueries.phablet`
+  ${(p) => mediaqueries.phablet`
     &::before {
       content: "";
       width: 100%;
@@ -74,7 +86,7 @@ const Hero = styled.div`
 `;
 
 const ArticleMeta = styled.div<{ hasCoAUthors: boolean }>`
-  margin-left: ${p => (p.hasCoAUthors ? '10px' : '0')};
+  margin-left: ${(p) => (p.hasCoAUthors ? '10px' : '0')};
 
   ${mediaqueries.phablet`
     margin-left: 0;
@@ -84,7 +96,7 @@ const ArticleMeta = styled.div<{ hasCoAUthors: boolean }>`
 const Header = styled.header`
   position: relative;
   z-index: 10;
-  margin:100px auto 120px;
+  margin: 100px auto 120px;
   padding-left: 68px;
   max-width: 749px;
 
@@ -112,7 +124,7 @@ const Header = styled.header`
 
 const HeroHeading = styled(Headings.h1)`
   font-size: 48px;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${(p) => p.theme.fonts.serif};
   margin-bottom: 25px;
   font-weight: bold;
   line-height: 1.32;
@@ -131,13 +143,14 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
   position: relative;
   display: flex;
   font-size: 18px;
-  color: ${p => p.theme.colors.grey};
+  color: ${(p) => p.theme.colors.grey};
 
-  ${p => mediaqueries.phablet`
+  ${(p) => mediaqueries.phablet`
     font-size: 14px;
     flex-direction: column;
 
-    ${p.hasCoAUthors &&
+    ${
+      p.hasCoAUthors &&
       `
         &::before {
           content: '';
@@ -150,7 +163,8 @@ const HeroSubtitle = styled.div<{ hasCoAUthors: boolean }>`
           opacity: 0.5;
           border-radius: 5px;
         }
-    `}
+    `
+    }
 
 
     strong {

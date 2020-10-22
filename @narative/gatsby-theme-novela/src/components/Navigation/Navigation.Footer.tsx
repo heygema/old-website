@@ -13,7 +13,7 @@ const siteQuery = graphql`
       edges {
         node {
           siteMetadata {
-            name
+            title
             social {
               url
               name
@@ -39,7 +39,7 @@ const siteQuery = graphql`
 
 const Footer: React.FC<{}> = () => {
   const results = useStaticQuery(siteQuery);
-  const { name, social } = results.allSite.edges[0].node.siteMetadata;
+  const { title, social } = results.allSite.edges[0].node.siteMetadata;
 
   const copyrightDate = (() => {
     const { edges } = results.allMdx;
@@ -56,7 +56,7 @@ const Footer: React.FC<{}> = () => {
         <HoritzontalRule />
         <FooterContainer>
           <FooterText>
-            © {copyrightDate} {name}, thanks{' '}
+            © {copyrightDate} {title}, thanks{' '}
             <ThemeReference
               href="https://novela.narative.co/"
               target="_blank"

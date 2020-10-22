@@ -22,18 +22,18 @@ const fonts = {
 const colorModeTransition =
   'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad)';
 
-let initialColorMode = 'light';
+// let initialColorMode = 'light';
 
-if (
-  typeof window !== 'undefined' &&
-  window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches
-) {
-  initialColorMode = 'dark';
-}
+// if (
+//   typeof window !== 'undefined' &&
+//   window.matchMedia &&
+//   window.matchMedia('(prefers-color-scheme: dark)').matches
+// ) {
+//   initialColorMode = 'dark';
+// }
 
 export default merge({
-  initialColorMode,
+  initialColorMode: 'light',
   useCustomProperties: true,
   colorModeTransition,
   colors,

@@ -1,5 +1,6 @@
 import React from 'react';
 import Ketikin from 'ketikin';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 
 import Section from '@narative/gatsby-theme-novela/src/components/Section';
@@ -20,32 +21,50 @@ const greetings = [
   'Приве́т',
   'Bonjour',
   '你好',
-
   'Xin Chào',
 ].map((text) => text + '!');
 
-function LinkText({ href = '', text = '' }) {
-  return (
+const siteQuery = graphql`
+  {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`;
+
+const AboutPage: Template = ({ location }) => {
+  const results = useStaticQuery(siteQuery);
+  let {
+    allSite: {
+      edges: [
+        {
+          node: {
+            siteMetadata: { title, description },
+          },
+        },
+      ],
+    },
+  } = results;
+
+  const makeLink = (href, text) => (
     <BoldLink href={href} target="_blank">
       {text}
     </BoldLink>
   );
-}
-
-const AboutPage: Template = ({ location }) => {
-  const makeLink = (href, text) => <LinkText href={href} text={text} />;
-
-  const pianoLink = 'https://en.wikipedia.org/wiki/Piano';
-
-  const travelingLink = 'https://en.wikipedia.org/wiki/Travel';
 
   return (
     <Layout>
       <SEO
         pathname={location.pathname}
-        title="Gema Anggada"
-        description="👋 I am a Software Engineer (He/Him) who
-        grew up Jakarta, Indonesia."
+        title={title}
+        description={description}
       />
       <Section>
         <Row>
@@ -56,18 +75,19 @@ const AboutPage: Template = ({ location }) => {
               </Ketikin>
             </HelloDiv>
             <P>
-              👋 My name is Gema Anggada! I am a Software Engineer (He/Him) who
-              grew up in Jakarta, Indonesia. I've work with
+              👋 My name is {title}! I am a Software Engineer (He/Him) who grew
+              up in Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
               websites and mobile apps, while also try to hone my skills in{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')}, or{' '}
               {makeLink('https://python.org', 'Python')}. Generally, I also love
-              things about {makeLink(pianoLink, 'Piano')} and{' '}
-              {makeLink(travelingLink, 'Traveling')}. This is a place to pour my
-              thoughts about variety of topics, including but not limited to
-              programming.
+              things about{' '}
+              {makeLink('https://en.wikipedia.org/wiki/Piano', 'Piano')} and{' '}
+              {makeLink('https://en.wikipedia.org/wiki/Travel', 'Traveling')}.
+              This is a place to pour my thoughts about variety of topics,
+              including but not limited to programming.
             </P>
           </BioContainer>
           <ProfilePictureDiv>

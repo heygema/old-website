@@ -15,14 +15,7 @@ import { globalStyles } from '@styles';
  * which hides a lot of the mess we need to create our Desktop and Mobile experiences.
  */
 const Layout: React.FC<{}> = ({ children }) => {
-  const [colorMode, setColorMode] = useColorMode();
-
-  useEffect(() => {
-    let hours = new Date().getHours();
-    if (hours >= 17) {
-      setColorMode('dark');
-    }
-  }, []);
+  const [colorMode] = useColorMode();
 
   useEffect(() => {
     parent.postMessage({ theme: colorMode }, '*');
@@ -44,7 +37,7 @@ export default Layout;
 
 const Container = styled.div`
   position: relative;
-  background: ${p => p.theme.colors.background};
-  transition: ${p => p.theme.colorModeTransition};
+  background: ${(p) => p.theme.colors.background};
+  transition: ${(p) => p.theme.colorModeTransition};
   min-height: 100vh;
 `;

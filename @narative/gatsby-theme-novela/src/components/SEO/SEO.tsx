@@ -36,6 +36,7 @@ interface HelmetProps {
   timeToRead?: string;
   title: string;
   isSecret: false;
+  tags?: string[];
 }
 
 const seoQuery = graphql`
@@ -81,6 +82,7 @@ const SEO: React.FC<HelmetProps> = ({
   authorsBio,
   authorsSlug,
   canonicalUrl,
+  tags,
   children,
   dateforSEO,
   description,
@@ -94,15 +96,15 @@ const SEO: React.FC<HelmetProps> = ({
 }) => {
   const results = useStaticQuery(seoQuery);
   const site = results.allSite.edges[0].node.siteMetadata;
-  const twitter = site.social.find(option => option.name === 'twitter') || {};
-  const github = site.social.find(option => option.name === 'github') || {};
-  const linkedin = site.social.find(option => option.name === 'linkedin') || {};
-  const medium = site.social.find(option => option.name === 'medium') || {};
+  const twitter = site.social.find((option) => option.name === 'twitter') || {};
+  const github = site.social.find((option) => option.name === 'github') || {};
+  const linkedin =
+    site.social.find((option) => option.name === 'linkedin') || {};
+  const medium = site.social.find((option) => option.name === 'medium') || {};
 
-  const pageUrl = site.siteUrl + pathname
+  const pageUrl = site.siteUrl + pathname;
 
-  const fullURL = (path: string) =>
-    path ? `${path}` : site.siteUrl;
+  const fullURL = (path: string) => (path ? `${path}` : site.siteUrl);
 
   // If no image is provided lets looks for a default novela static image
   image = image ? image : `${site.siteUrl}/preview.jpg`;
@@ -337,7 +339,7 @@ const SEO: React.FC<HelmetProps> = ({
     }
   });
 
-  const schema = isBlogPost ? blogSchema : siteSchema
+  const schema = isBlogPost ? blogSchema : siteSchema;
 
   const metaTags = [
     { charset: 'utf-8' },
@@ -375,6 +377,10 @@ const SEO: React.FC<HelmetProps> = ({
     { property: 'og:description', content: description || site.description },
     { property: 'og:site_name', content: site.name },
   ];
+
+  if (tags) {
+    metaTags.push({ name: 'keywords', content: tags.join(',') });
+  }
 
   if (published) {
     metaTags.push({ name: 'article:published_time', content: published });

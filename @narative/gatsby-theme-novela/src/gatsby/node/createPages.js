@@ -13,6 +13,7 @@ const templates = {
   articles: path.resolve(templatesDirectory, 'articles.template.tsx'),
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
+  tag: path.resolve(templatesDirectory, 'tag.template.tsx'),
 };
 
 const query = require('../data/data.query');
@@ -51,10 +52,12 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     rootPath,
     basePath = '/',
     authorsPath = '/authors',
+    tagPath = '/tag',
     authorsPage = true,
     pageLength = 6,
     sources = {},
     mailchimp = '',
+    tags = false,
   } = themeOptions;
 
   const { data } = await graphql(`
@@ -160,6 +163,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
    * /articles/page/1
    * ...
    */
+
   log('Creating', 'articles page');
   createPaginatedPages({
     edges: articlesThatArentSecret,
@@ -173,6 +177,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       basePath,
       skip: pageLength,
       limit: pageLength,
+      tags,
     },
   });
 
@@ -230,6 +235,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         canonicalUrl: article.canonical_url,
         mailchimp,
         next,
+        tags,
       },
     });
   });
@@ -260,8 +266,61 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
           originalPath: path,
           skip: pageLength,
           limit: pageLength,
+          tags,
         },
       });
     });
   }
+
+
+  if (tags) {
+    const uniqueTags = [
+      ...new Set(
+        articles.reduce((accumulator, article) => {
+          return [...accumulator, ...article.tags];
+        }, []),
+      ),
+    ];
+
+    if (uniqueTags.length > 0) {
+      // TODO: need to implements, [/tag] page.
+      // log('Creating', 'tags pages');
+
+      /**
+       * Creating main tag pages example
+       *  /tag/gatsby
+       *  /tag/gatsby/2
+       */
+      log('Creating', 'tag pages');
+      console.log('tags are...', uniqueTags);
+      uniqueTags.forEach(tag => {
+        let allArticlesOfTheTag;
+        try {
+          allArticlesOfTheTag = articles.filter(article =>
+            article.tags.includes(tag),
+          );
+        } catch (error) {
+          throw new Error(error);
+        }
+
+        const path = slugify(tag, tagPath);
+
+        createPaginatedPages({
+          edges: allArticlesOfTheTag,
+          pathPrefix: path,
+          createPage,
+          pageLength,
+          pageTemplate: templates.tag,
+          buildPath: buildPaginatedPath,
+          context: {
+            tag,
+            originalPath: path,
+            skip: pageLength,
+            limit: pageLength,
+          },
+        });
+      });
+    }
+  }
+
 };

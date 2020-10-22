@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface IPaginator {
   pageCount: number;
@@ -52,6 +52,7 @@ export interface IArticle {
   timeToRead: number;
   date: string;
   secret: boolean;
+  tags: string[];
 }
 
 interface IArticleQuery {
@@ -69,8 +70,8 @@ export interface IProgress {
 }
 
 export type Icon = React.FC<{
-  fill: string
-}>
+  fill: string;
+}>;
 
 export type Template = React.FC<{
   pageContext: {
@@ -78,6 +79,7 @@ export type Template = React.FC<{
     authors: IAuthor[];
     mailchimp: boolean;
     next: IArticle[];
+    tags: boolean;
   };
   location: Location;
-}>
+}>;

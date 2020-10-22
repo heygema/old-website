@@ -160,6 +160,8 @@ const showDetails = css`
 `;
 
 const TagsContainer = styled(TagsContainerBase)`
+  margin-top: 10px;
+
   ${mediaqueries.phablet`
     max-width: 100%;
     padding:  0 20px 30px;

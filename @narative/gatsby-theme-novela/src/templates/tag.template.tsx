@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 import Headings from '@components/Headings';
 import Section from '@components/Section';
@@ -7,7 +8,7 @@ import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import Paginator from '@components/Navigation/Navigation.Paginator';
 import mediaqueries from '@styles/media';
-import ArticlesList from '../sections/articles/Articles.List.tsx';
+import AuthorArticles from '../sections/author/Author.Articles';
 
 function TagPage({ location, pageContext }) {
   const { group: articles, tag } = pageContext;
@@ -15,14 +16,14 @@ function TagPage({ location, pageContext }) {
   return (
     <Layout>
       <SEO pathname={location.pathname} title={tag} />
+
       <Section>
-        <HeroHeading>{`All articles tagged in #${tag}`}</HeroHeading>
+        <div css={centeredRow}>
+          <HeroHeading>{`All articles tagged in #${tag}`}</HeroHeading>
+        </div>
       </Section>
       <Section narrow>
-        <ArticlesContainer>
-          <ArticlesList articles={articles} alwaysShowAllDetails />
-        </ArticlesContainer>
-
+        <AuthorArticles articles={articles} />
         <AuthorPaginator>
           <Paginator {...pageContext} />
         </AuthorPaginator>
@@ -34,24 +35,15 @@ function TagPage({ location, pageContext }) {
 
 export default TagPage;
 
-const ArticlesContainer = styled.div`
-  border-radius: 8px;
-  padding: 88px 98px;
-  position: relative;
-  z-index: 1;
-
-  ${mediaqueries.desktop_medium`
-    padding: 80px;
-  `}
-
-  ${mediaqueries.desktop`
-    padding: 0;
-    background: transparent;
-  `}
+const centeredRow = css`
+  min-height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const HeroHeading = styled(Headings.h2)`
-  font-family: ${(p) => p.theme.fonts.serif};
+  font-family: ${(p) => p.theme.fonts.sansSerif};
   margin-top: 60px;
   margin-bottom: 25px;
   font-weight: bold;

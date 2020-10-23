@@ -211,6 +211,7 @@ const NothingYetContainer = styled(Paragraph)`
 const BoldLink = styled.a`
   color: ${(p) => p.theme.colors.articleText};
   font-weight: 700;
+  transition: color 0.3s ease-in-out;
 
   &:hover {
     color: ${(p) => p.theme.colors.accent};

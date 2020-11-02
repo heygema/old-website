@@ -1,4 +1,5 @@
 import { css } from '@emotion/core';
+import Wotfard from '../fonts/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf';
 
 const linkStrokeStuff = `
 :root {
@@ -58,6 +59,13 @@ export const globalStyles = css`
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  @font-face {
+    font-family: 'Wotfard';
+    src: url(${Wotfard}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
 
   @font-face {

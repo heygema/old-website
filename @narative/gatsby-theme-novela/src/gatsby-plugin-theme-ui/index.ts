@@ -17,6 +17,7 @@ const fonts = {
   realSerif: `Merriweather, Georgia, Serif`,
   // TODO: just to change all the headuing font
   serif: `Wotfard, 'SF Pro Display', '-apple-system', sans-serif`,
+  reading: `'Libre Baskerville', Serif`,
   sansSerif: `'Nunito', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif`,
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Section from '@components/Section';
 import SocialLinks from '@components/SocialLinks';
@@ -43,7 +43,7 @@ const Footer: React.FC<{}> = () => {
 
   const copyrightDate = (() => {
     const { edges } = results.allMdx;
-    const years = [0, edges.length - 1].map((edge) =>
+    const years = [0, edges.length - 1].map(edge =>
       new Date(edges[edge].node.frontmatter.date).getFullYear(),
     );
     return years[0] === years[1] ? `${years[0]}` : `${years[0]}–${years[1]}`;
@@ -56,17 +56,40 @@ const Footer: React.FC<{}> = () => {
         <HoritzontalRule />
         <FooterContainer>
           <FooterText>
-            © {copyrightDate} {title}, thanks{' '}
-            <ThemeReference
+            © {copyrightDate} {title} (
+            <Uri
+              href="https://creativecommons.org/licenses/by-sa/3.0/"
+              target="_blank"
+              rel="noopener"
+              data-a11y="false"
+              title="License"
+              aria-label="License"
+            >
+              cc-by-sa
+            </Uri>
+            ) theme by{' '}
+            <Uri
               href="https://novela.narative.co/"
               target="_blank"
+              rel="noopener"
               data-a11y="false"
               title="Navigate to theme"
               aria-label="Navigate to theme"
             >
-              Novela
-            </ThemeReference>
-            . ❤ ️
+              novela
+            </Uri>
+            ,{' '}
+            <Uri
+              href="https://github.com/heygema/heygema.github.io"
+              target="_blank"
+              rel="noopener"
+              data-a11y="false"
+              title="Navigate to source code"
+              aria-label="Navigate to source code"
+            >
+              {'source code </>'}
+            </Uri>
+            .
           </FooterText>
           <div>
             <SocialLinks links={social} />
@@ -79,8 +102,9 @@ const Footer: React.FC<{}> = () => {
 
 export default Footer;
 
-const ThemeReference = styled.a`
-  color: ${(p) => p.theme.colors.grey};
+const Uri = styled.a`
+  font-weight: 800;
+  color: ${p => p.theme.colors.grey};
 `;
 
 const FooterContainer = styled.div`
@@ -89,7 +113,7 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-bottom: 80px;
-  color: ${(p) => p.theme.colors.grey};
+  color: ${p => p.theme.colors.grey};
 
   ${mediaqueries.tablet`
     flex-direction: column;
@@ -104,7 +128,7 @@ const FooterContainer = styled.div`
 const HoritzontalRule = styled.div`
   position: relative;
   margin: 140px auto 50px;
-  border-bottom: 1px solid ${(p) => p.theme.colors.horizontalRule};
+  border-bottom: 1px solid ${p => p.theme.colors.horizontalRule};
 
   ${mediaqueries.tablet`
     margin: 60px auto;
@@ -133,6 +157,6 @@ const FooterGradient = styled.div`
   height: 590px;
   z-index: 0;
   pointer-events: none;
-  background: ${(p) => p.theme.colors.gradient};
-  transition: ${(p) => p.theme.colorModeTransition};
+  background: ${p => p.theme.colors.gradient};
+  transition: ${p => p.theme.colorModeTransition};
 `;

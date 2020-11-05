@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { useColorMode } from 'theme-ui';
 
 import Image from '@components/Image';
 import mediaqueries from '@styles/media';

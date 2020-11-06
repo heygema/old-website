@@ -1,8 +1,6 @@
 - name: Gema Anggada
   bio: |
-    I'm the owner of this site. Though
-    guest posts are welcome.
-    just email me from the link below (email icon)
+    I'm the owner of this site.
   featured: true
   avatar: ./avatars/gema.jpg
   social:

@@ -22,7 +22,7 @@ const greetings = [
   'Bonjour',
   '你好',
   'Xin Chào',
-].map((text) => text + '!');
+].map(text => text + '!');
 
 const siteQuery = graphql`
   {
@@ -71,22 +71,20 @@ const AboutPage: Template = ({ location }) => {
           <BioContainer>
             <HelloDiv>
               <Ketikin texts={greetings} interval={180}>
-                {(value) => <Title>{value || '_'}</Title>}
+                {value => <Title>{value || '_'}</Title>}
               </Ketikin>
             </HelloDiv>
             <P>
               👋 My name is {title}! I am a Software Engineer (He/Him) who grew
               up in Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
+              {makeLink('https://reasonml.github.io', 'ReasonML')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
-              websites and mobile apps, while also try to hone my skills in{' '}
-              {makeLink('https://reasonml.github.io', 'ReasonML')}, or{' '}
-              {makeLink('https://python.org', 'Python')}. Generally, I also love
-              things about{' '}
+              websites and mobile apps. Generally, I also love things about{' '}
               {makeLink('https://en.wikipedia.org/wiki/Piano', 'Piano')} and{' '}
               {makeLink('https://en.wikipedia.org/wiki/Travel', 'Traveling')}.
-              This is a place to pour my thoughts about variety of topics,
+              This is a place to pour my thoughts about a variety of topics,
               including but not limited to programming.
             </P>
           </BioContainer>
@@ -179,7 +177,7 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-family: ${(p) => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.serif};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -209,12 +207,12 @@ const NothingYetContainer = styled(Paragraph)`
 `;
 
 const BoldLink = styled.a`
-  color: ${(p) => p.theme.colors.articleText};
+  color: ${p => p.theme.colors.articleText};
   font-weight: 700;
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: ${(p) => p.theme.colors.accent};
+    color: ${p => p.theme.colors.accent};
   }
 `;
 
@@ -223,7 +221,7 @@ BoldLink.defaultProps = { target: '_blank' };
 const P = styled(Paragraph)`
   font-size: 2.3rem;
   margin-bottom: 10px;
-  max-width: ${(p) => (p.narrow ? '415px' : '515px')};
+  max-width: ${p => (p.narrow ? '415px' : '515px')};
   margin-left: 0px;
 
   ${mediaqueries.desktop`

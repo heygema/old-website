@@ -45,8 +45,6 @@
     "adm-zip": "^0.4.13",
     "babel-plugin-emotion": "^10.0.14",
     "contentful-cli": "^0.36.0",
-    "fontsource-libre-baskerville": "^3.0.9",
-    "fontsource-nunito": "^3.0.9",
     "gatsby": "^2.15.7",
     "gatsby-image": "^2.2.7",
     "gatsby-paginate": "^1.1.0",

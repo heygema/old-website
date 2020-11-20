@@ -98,7 +98,7 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: Nunito, '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+    font-family: Wotfard, '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
       'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
       'Arial', sans-serif;
     font-size: 1.6rem;

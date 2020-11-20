@@ -13,11 +13,17 @@ const breakpoints = [
   ['desktop_large', 1440],
 ];
 
+const wotfardFTW = `Wotfard, 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif`
+
 const fonts = {
-  realSerif: `Merriweather, Georgia, Serif`,
-  // TODO: just to change all the headuing font
-  serif: `Wotfard, 'SF Pro Display', '-apple-system', sans-serif`,
-  sansSerif: `'Nunito', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif`,
+  // NOTE these were previous settings:
+  // Serif-the old style font
+  // realSerif: `Merriweather, Georgia, Serif`,
+  // Sans Serif the modern one
+  // realSansSerif: `'Nunito', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif`,
+  // NOTE: here is I swapped type for Sans-Serif and Serif.
+  serif: wotfardFTW,
+  sansSerif: wotfardFTW,
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 

@@ -9950,6 +9950,11 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.0.0"
 
+fontsource-libre-baskerville@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/fontsource-libre-baskerville/-/fontsource-libre-baskerville-3.0.9.tgz#74211845f9a085f921c7c25d785389bc8e927b9b"
+  integrity sha512-mIbhAuHh1w6cY0QbbEXZDgQzXMYk/Vl8VUrpT5Fe3Ny7ehb6Wd53mq/zdWeu9HyfQGtu4A9gZuHaN1coT8QrJw==
+
 fontsource-nunito@^3.0.9:
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/fontsource-nunito/-/fontsource-nunito-3.0.9.tgz#6a803b3beb572ab88223ccc62d4ab112d2741eea"

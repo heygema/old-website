@@ -1,15 +1,6 @@
 import { css } from '@emotion/core';
 import Wotfard from '../fonts/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf';
 
-/*
-
-NOTE: previous font family for body settings
-
-    font-family: Nunito, '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
-      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
-      'Arial', sans-serif;
-*/
-
 const linkStrokeStuff = `
 :root {
   --text: #2B3044;

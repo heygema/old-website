@@ -124,8 +124,8 @@ const AboutPage: Template = ({ location }) => {
             </div>
           </div>
         </Row>
-        <Subscription />
       </Section>
+      <Subscription />
     </Layout>
   );
 };
@@ -177,7 +177,7 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;

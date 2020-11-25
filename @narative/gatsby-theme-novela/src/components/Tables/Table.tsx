@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "@emotion/styled";
-import mediaqueries from "@styles/media";
+import React from 'react';
+import styled from '@emotion/styled';
+import mediaqueries from '@styles/media';
 
 const StyledTable = styled.table`
   position: relative;
   line-height: 1.65;
   color: ${p => p.theme.colors.grey};
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   transition: ${p => p.theme.colorModeTransition};
   background: ${p => p.theme.colors.card};
   margin: 45px auto 85px;
@@ -32,7 +32,7 @@ const StyledTable = styled.table`
 
 const Table: React.FC<{}> = ({ children }) => {
   return (
-    <div style={{ overflowX: "auto", padding: "0 20px" }}>
+    <div style={{ overflowX: 'auto', padding: '0 20px' }}>
       <StyledTable>{children}</StyledTable>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Link, navigate, graphql, useStaticQuery } from 'gatsby';
 import useSound from 'use-sound';
-import clicky from '../../sounds/clicky.mp3'
+import clicky from '../../sounds/clicky.mp3';
 import { useColorMode } from 'theme-ui';
 
 import Headings from '@components/Headings';
@@ -39,10 +39,7 @@ const siteQuery = graphql`
 
 const DarkModeToggle: React.FC<{}> = () => {
   const [colorMode, setColorMode] = useColorMode();
-  const [playClick] = useSound(
-    clicky,
-    { volume: 0.25 }
-  );
+  const [playClick] = useSound(clicky, { volume: 0.25 });
   const isDark = colorMode === `dark`;
 
   function toggleColorMode(event) {
@@ -213,7 +210,7 @@ export default NavigationHeader;
 const AboutText = styled(Headings.h4)`
   opacity: 0.5;
   font-size: 1.8rem;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   animation: fadein 0.3s linear forwards;
 
   ${mediaqueries.tablet`
@@ -237,7 +234,7 @@ const AboutText = styled(Headings.h4)`
 
 const Title = styled(Headings.h2)`
   font-size: 2rem;
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: ${p =>
     p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '10px'};
   transition: color 0.3s ease-in-out;

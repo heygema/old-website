@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { Link } from "gatsby";
+import React from 'react';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+import { Link } from 'gatsby';
 
-import Headings from "@components/Headings";
-import Image from "@components/Image";
+import Headings from '@components/Headings';
+import Image from '@components/Image';
 
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 
-import { IArticle } from "@types";
+import { IArticle } from '@types';
 
 interface ArticlesNextProps {
-  articles: IArticle[]
+  articles: IArticle[];
 }
 
 /**
@@ -54,7 +54,7 @@ const GridItem: React.FC<GridItemProps> = ({ article, narrow }) => {
     <ArticleLink
       to={article.slug}
       data-a11y="false"
-      narrow={narrow ? "true" : "false"}
+      narrow={narrow ? 'true' : 'false'}
     >
       <Item>
         <ImageContainer>
@@ -66,14 +66,14 @@ const GridItem: React.FC<GridItemProps> = ({ article, narrow }) => {
         <Excerpt hasOverflow={hasOverflow}>{article.excerpt}</Excerpt>
         <MetaData>
           {article.date} · {article.timeToRead} min read
-        </MetaData>{" "}
+        </MetaData>{' '}
       </Item>
     </ArticleLink>
   );
 };
 
-const wide = "1fr";
-const narrow = "457px";
+const wide = '1fr';
+const narrow = '457px';
 
 const limitToTwoLines = css`
   text-overflow: ellipsis;
@@ -106,7 +106,7 @@ const Grid = styled.div<{ numberOfArticles: number }>`
   }}
   column-gap: 30px;
   margin: 0 auto;
-  max-width: ${p => (p.numberOfArticles === 1 ? "680px" : "100%")};
+  max-width: ${p => (p.numberOfArticles === 1 ? '680px' : '100%')};
 
   ${mediaqueries.desktop`
     grid-template-columns: 1fr 1fr;
@@ -159,9 +159,9 @@ const Item = styled.div`
 const Title = styled(Headings.h3)`
   font-size: 22px;
   line-height: 1.4;
-  margin-bottom: ${p => (p.hasOverflow ? "45px" : "10px")};
+  margin-bottom: ${p => (p.hasOverflow ? '45px' : '10px')};
   color: ${p => p.theme.colors.primary};
-  font-family: ${p => p.theme.fonts.serif};
+  font-family: ${p => p.theme.fonts.sansSerif};
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
 
@@ -180,8 +180,8 @@ const Excerpt = styled.p<{ narrow: boolean; hasOverflow: boolean }>`
   font-size: 16px;
   margin-bottom: 10px;
   color: ${p => p.theme.colors.grey};
-  display: ${p => (p.hasOverflow ? "none" : "box")};
-  max-width: ${p => (p.narrow ? "415px" : "515px")};
+  display: ${p => (p.hasOverflow ? 'none' : 'box')};
+  max-width: ${p => (p.narrow ? '415px' : '515px')};
 
   ${mediaqueries.desktop`
     display: -webkit-box;
@@ -233,8 +233,8 @@ const ArticleLink = styled(Link)<{ narrow: string }>`
     color: ${p => p.theme.colors.accent};
   }
 
-  &[data-a11y="true"]:focus::after {
-    content: "";
+  &[data-a11y='true']:focus::after {
+    content: '';
     position: absolute;
     left: -2%;
     top: -2%;
@@ -244,7 +244,7 @@ const ArticleLink = styled(Link)<{ narrow: string }>`
     background: rgba(255, 255, 255, 0.01);
   }
 
-  ${p => p.narrow === "true" && mediaqueries.tablet`display: none;`}
+  ${p => p.narrow === 'true' && mediaqueries.tablet`display: none;`}
 
   ${mediaqueries.phablet`
     &:hover ${ImageContainer} {

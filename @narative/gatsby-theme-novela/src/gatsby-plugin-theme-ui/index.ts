@@ -22,7 +22,7 @@ const fonts = {
   // Sans Serif the modern one
   // realSansSerif: `'Nunito', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif`,
   // NOTE: here is I swapped type for Sans-Serif and Serif.
-  serif: wotfardFTW,
+  serif: `adobe-garamond-pro, Merriweather, Georgia, serif`,
   sansSerif: wotfardFTW,
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };

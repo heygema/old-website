@@ -122,7 +122,7 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
           <TagsContainer>
             {article.tags &&
               article.tags.length > 0 &&
-              article.tags.map((tag) => (
+              article.tags.map(tag => (
                 <Tag to={`/tag/${tag.toLowerCase()}`}>{`#${tag}`}</Tag>
               ))}
           </TagsContainer>
@@ -170,10 +170,10 @@ const TagsContainer = styled(TagsContainerBase)`
 
 const ArticlesListContainer = styled.div<{ alwaysShowAllDetails?: boolean }>`
   transition: opacity 0.25s;
-  ${(p) => p.alwaysShowAllDetails && showDetails}
+  ${p => p.alwaysShowAllDetails && showDetails}
 `;
 
-const listTile = (p) => css`
+const listTile = p => css`
   position: relative;
   display: grid;
   grid-template-columns: ${p.reverse
@@ -199,7 +199,7 @@ const listTile = (p) => css`
   `}
 `;
 
-const listItemRow = (p) => css`
+const listItemRow = p => css`
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 488px;
@@ -229,7 +229,7 @@ const listItemRow = (p) => css`
   `}
 `;
 
-const listItemTile = (p) => css`
+const listItemTile = p => css`
   position: relative;
 
   ${mediaqueries.tablet`
@@ -249,7 +249,7 @@ const listItemTile = (p) => css`
 `;
 
 // If only 1 article, dont create 2 rows.
-const listRow = (p) => css`
+const listRow = p => css`
   display: grid;
   grid-template-rows: ${p.hasOnlyOneArticle ? '1fr' : '1fr 1fr'};
 `;
@@ -259,19 +259,19 @@ const List = styled.div<{
   gridLayout: string;
   hasOnlyOneArticle: boolean;
 }>`
-  ${(p) => (p.gridLayout === 'tiles' ? listTile : listRow)}
+  ${p => (p.gridLayout === 'tiles' ? listTile : listRow)}
 `;
 
 const Item = styled.div<{ gridLayout: string }>`
-  ${(p) => (p.gridLayout === 'rows' ? listItemRow : listItemTile)}
+  ${p => (p.gridLayout === 'rows' ? listItemRow : listItemTile)}
 `;
 
 const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
   position: relative;
-  height: ${(p) => (p.gridLayout === 'tiles' ? '280px' : '220px')};
-  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, ${(p) => (p.narrow ? 0.22 : 0.3)}),
-    0 18px 36px -18px rgba(0, 0, 0, ${(p) => (p.narrow ? 0.25 : 0.33)});
-  margin-bottom: ${(p) => (p.gridLayout === 'tiles' ? '30px' : 0)};
+  height: ${p => (p.gridLayout === 'tiles' ? '280px' : '220px')};
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, ${p => (p.narrow ? 0.22 : 0.3)}),
+    0 18px 36px -18px rgba(0, 0, 0, ${p => (p.narrow ? 0.25 : 0.33)});
+  margin-bottom: ${p => (p.gridLayout === 'tiles' ? '30px' : 0)};
   transition: transform 0.3s var(--ease-out-quad),
     box-shadow 0.3s var(--ease-out-quad);
 
@@ -295,8 +295,8 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
 
 const Title = styled(Headings.h2)`
   font-size: 21px;
-  font-family: ${(p) => p.theme.fonts.serif};
-  margin-bottom: ${(p) =>
+  font-family: ${p => p.theme.fonts.sansSerif};
+  margin-bottom: ${p =>
     p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '10px'};
   transition: color 0.3s ease-in-out;
   ${limitToTwoLines};
@@ -325,10 +325,9 @@ const Excerpt = styled.p<{
   ${limitToTwoLines};
   font-size: 16px;
   margin-bottom: 10px;
-  color: ${(p) => p.theme.colors.grey};
-  display: ${(p) =>
-    p.hasOverflow && p.gridLayout === 'tiles' ? 'none' : 'box'};
-  max-width: ${(p) => (p.narrow ? '415px' : '515px')};
+  color: ${p => p.theme.colors.grey};
+  display: ${p => (p.hasOverflow && p.gridLayout === 'tiles' ? 'none' : 'box')};
+  max-width: ${p => (p.narrow ? '415px' : '515px')};
 
   ${mediaqueries.desktop`
     display: -webkit-box;
@@ -349,7 +348,7 @@ const Excerpt = styled.p<{
 const MetaData = styled.div`
   font-weight: 600;
   font-size: 16px;
-  color: ${(p) => p.theme.colors.grey};
+  color: ${p => p.theme.colors.grey};
   opacity: 0.33;
 
   ${mediaqueries.phablet`
@@ -378,7 +377,7 @@ const ArticleLink = styled(Link)`
 
   &:hover h2,
   &:focus h2 {
-    color: ${(p) => p.theme.colors.accent};
+    color: ${p => p.theme.colors.accent};
   }
 
   &[data-a11y='true']:focus::after {
@@ -388,7 +387,7 @@ const ArticleLink = styled(Link)`
     top: -2%;
     width: 103%;
     height: 104%;
-    border: 3px solid ${(p) => p.theme.colors.accent};
+    border: 3px solid ${p => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }

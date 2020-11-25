@@ -1,11 +1,13 @@
-import styled from "@emotion/styled";
-import mediaqueries from "@styles/media";
+import styled from '@emotion/styled';
+import mediaqueries from '@styles/media';
 
+// before: font-size: 18px
 const Paragraph = styled.p`
   line-height: 1.756;
-  font-size: 18px;
+  font-size: 2.3rem;
   color: ${p => p.theme.colors.articleText};
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
+  letter-spacing: 0.25px;
   transition: ${p => p.theme.colorModeTransition};
   margin: 0 auto 35px;
   width: 100%;

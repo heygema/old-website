@@ -43,7 +43,7 @@ const centeredRow = css`
 `;
 
 const HeroHeading = styled(Headings.h2)`
-  font-family: ${(p) => p.theme.fonts.sansSerif};
+  font-family: ${p => p.theme.fonts.serif};
   margin-top: 60px;
   margin-bottom: 25px;
   font-weight: bold;
@@ -67,8 +67,8 @@ const AuthorsGradient = styled.div`
   height: 590px;
   z-index: 0;
   pointer-events: none;
-  background: ${(p) => p.theme.colors.gradient};
-  transition: ${(p) => p.theme.colorModeTransition};
+  background: ${p => p.theme.colors.gradient};
+  transition: ${p => p.theme.colorModeTransition};
 `;
 
 const AuthorPaginator = styled.div`

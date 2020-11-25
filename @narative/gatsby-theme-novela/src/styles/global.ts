@@ -61,6 +61,8 @@ export const globalStyles = css`
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
   }
 
+  @import url('https://use.typekit.net/hfy7jzr.css');
+
   @font-face {
     font-family: 'Wotfard';
     src: url(${Wotfard}) format('truetype');

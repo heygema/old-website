@@ -86,8 +86,8 @@ const AboutPage: Template = ({ location }) => {
               websites and mobile apps. Generally, I also love things about{' '}
               {makeLink('https://en.wikipedia.org/wiki/Piano', 'piano')} and{' '}
               {makeLink('https://en.wikipedia.org/wiki/Travel', 'traveling')}.
-              This is a place to pour my thoughts about a variety of topics,
-              including but not limited to{' '}
+              This is a place to pour my thoughts about a variety of topics, not
+              limited to{' '}
               {makeLink(
                 'https://en.wikipedia.org/wiki/Computer_programming',
                 'programming',

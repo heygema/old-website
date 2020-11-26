@@ -75,10 +75,8 @@ const AboutPage: Template = ({ location }) => {
               </Ketikin>
             </HelloDiv>
             <P>
-              👋 My name is {title}! I'm a{' '}
-              {makeLink('https://en.wikipedia.org/wiki/Human', 'Sapiens')}{' '}
-              (He/Him) who took a profession as a Software Engineer. I grew up
-              in Jakarta, Indonesia. I've work with
+              👋 My name is {title}! (He/Him) I took Software Engineer as my
+              profession. I grew up in Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}

@@ -2,14 +2,15 @@ import styled from '@emotion/styled';
 import mediaqueries from '@styles/media';
 
 const OrderedList = styled.ol`
+  font-family: ${(p) => p.theme.fonts.serif};
   list-style: none;
   counter-reset: list;
-  color: ${p => p.theme.colors.articleText};
+  color: ${(p) => p.theme.colors.articleText};
   position: relative;
   padding: 15px 0 30px 30px;
   margin: 0 auto;
-  transition: ${p => p.theme.colorModeTransition};
-  font-size: 18px;
+  transition: ${(p) => p.theme.colorModeTransition};
+  font-size: 2.1rem;
 
   width: 100%;
   max-width: 680px;
@@ -54,7 +55,7 @@ const OrderedList = styled.ol`
     width: 3rem;
     display: inline-block;
     position: absolute;
-    color: ${p => p.theme.colors.articleText};
+    color: ${(p) => p.theme.colors.articleText};
   }
 
   li::before {

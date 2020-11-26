@@ -22,7 +22,7 @@ const greetings = [
   'Bonjour',
   '你好',
   'Xin Chào',
-].map(text => text + '!');
+].map((text) => text + '!');
 
 const siteQuery = graphql`
   {
@@ -71,14 +71,14 @@ const AboutPage: Template = ({ location }) => {
           <BioContainer>
             <HelloDiv>
               <Ketikin texts={greetings} interval={180}>
-                {value => <Title>{value || '_'}</Title>}
+                {(value) => <Title>{value || '_'}</Title>}
               </Ketikin>
             </HelloDiv>
             <P>
               👋 My name is {title}! I'm a{' '}
-              {makeLink('https://en.wikipedia.org/wiki/Human', 'Sapiens')} who
-              take a profession as a Software Engineer (He/Him). I grew up in
-              Jakarta, Indonesia. I've work with
+              {makeLink('https://en.wikipedia.org/wiki/Human', 'Sapiens')}{' '}
+              (He/Him) who took a profession as a Software Engineer. I grew up
+              in Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
@@ -184,7 +184,7 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-family: ${p => p.theme.fonts.sansSerif};
+  font-family: ${(p) => p.theme.fonts.sansSerif};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -214,12 +214,12 @@ const NothingYetContainer = styled(Paragraph)`
 `;
 
 const BoldLink = styled.a`
-  color: ${p => p.theme.colors.articleText};
+  color: ${(p) => p.theme.colors.articleText};
   font-weight: 700;
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: ${p => p.theme.colors.accent};
+    color: ${(p) => p.theme.colors.accent};
   }
 `;
 
@@ -228,7 +228,7 @@ BoldLink.defaultProps = { target: '_blank' };
 const P = styled(Paragraph)`
   font-size: 2.3rem;
   margin-bottom: 10px;
-  max-width: ${p => (p.narrow ? '415px' : '515px')};
+  max-width: ${(p) => (p.narrow ? '415px' : '515px')};
   margin-left: 0px;
 
   ${mediaqueries.desktop`

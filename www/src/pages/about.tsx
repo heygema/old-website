@@ -75,17 +75,24 @@ const AboutPage: Template = ({ location }) => {
               </Ketikin>
             </HelloDiv>
             <P>
-              👋 My name is {title}! I am a Software Engineer (He/Him) who grew
-              up in Jakarta, Indonesia. I've work with
+              👋 My name is {title}! I'm a{' '}
+              {makeLink('https://en.wikipedia.org/wiki/Human', 'Sapiens')} who
+              take a profession as a Software Engineer (He/Him). I grew up in
+              Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
               websites and mobile apps. Generally, I also love things about{' '}
-              {makeLink('https://en.wikipedia.org/wiki/Piano', 'Piano')} and{' '}
-              {makeLink('https://en.wikipedia.org/wiki/Travel', 'Traveling')}.
+              {makeLink('https://en.wikipedia.org/wiki/Piano', 'piano')} and{' '}
+              {makeLink('https://en.wikipedia.org/wiki/Travel', 'traveling')}.
               This is a place to pour my thoughts about a variety of topics,
-              including but not limited to programming.
+              including but not limited to{' '}
+              {makeLink(
+                'https://en.wikipedia.org/wiki/Computer_programming',
+                'programming',
+              )}
+              .
             </P>
           </BioContainer>
           <ProfilePictureDiv>

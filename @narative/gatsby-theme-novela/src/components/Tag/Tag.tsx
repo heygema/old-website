@@ -7,7 +7,7 @@ export const Tag = styled(Link)`
   margin-left: 1rem;
   transition: color 0.3s ease-in-out;
 
-  &:first-child {
+  &:first-of-type {
     margin-left: 0px;
   }
 

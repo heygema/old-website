@@ -122,8 +122,11 @@ const ListItem: React.FC<ArticlesListItemProps> = ({ article, narrow }) => {
           <TagsContainer>
             {article.tags &&
               article.tags.length > 0 &&
-              article.tags.map((tag) => (
-                <Tag to={`/tag/${tag.toLowerCase()}`}>{`#${tag}`}</Tag>
+              article.tags.map((tag, index) => (
+                <Tag
+                  key={String(index)}
+                  to={`/tag/${tag.toLowerCase()}`}
+                >{`#${tag}`}</Tag>
               ))}
           </TagsContainer>
         </div>

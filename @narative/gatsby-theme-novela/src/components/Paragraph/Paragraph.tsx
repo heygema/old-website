@@ -5,10 +5,10 @@ import mediaqueries from '@styles/media';
 const Paragraph = styled.p`
   line-height: 1.756;
   font-size: 2.3rem;
-  color: ${p => p.theme.colors.articleText};
-  font-family: ${p => p.theme.fonts.serif};
+  color: ${(p) => p.theme.colors.articleText};
+  font-family: ${(p) => p.theme.fonts.serif};
   letter-spacing: 0.25px;
-  transition: ${p => p.theme.colorModeTransition};
+  transition: ${(p) => p.theme.colorModeTransition};
   margin: 0 auto 35px;
   width: 100%;
   max-width: 680px;
@@ -24,6 +24,7 @@ const Paragraph = styled.p`
   ${mediaqueries.tablet`
     max-width: 486px;
     margin: 0 auto 25px;
+    font-size: 1.7rem;
   `};
 
   ${mediaqueries.phablet`

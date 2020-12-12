@@ -38,6 +38,7 @@ const OrderedList = styled.ol`
 
     ${mediaqueries.phablet`
       padding-left: 30px;
+      font-size: 1.7rem;
     `};
 
     p {

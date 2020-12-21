@@ -11,7 +11,7 @@ import mediaqueries from '@styles/media';
 const commonStyles = p => css`
   font-weight: bold;
   color: ${p.theme.colors.primary};
-  font-family: ${p.theme.fonts.sansSerif};
+  font-family: ${p.theme.fonts.serif};
 `;
 
 const h1 = styled.h1`

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import mediaqueries from '@styles/media';
 
 const OrderedList = styled.ol`
-  font-family: ${(p) => p.theme.fonts.serif};
+  font-family: ${(p) => p.theme.fonts.sansSerif};
   list-style: none;
   counter-reset: list;
   color: ${(p) => p.theme.colors.articleText};
@@ -10,7 +10,7 @@ const OrderedList = styled.ol`
   padding: 15px 0 30px 30px;
   margin: 0 auto;
   transition: ${(p) => p.theme.colorModeTransition};
-  font-size: 2.1rem;
+  font-size: 2rem;
 
   width: 100%;
   max-width: 680px;

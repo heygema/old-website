@@ -182,7 +182,7 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-family: ${(p) => p.theme.fonts.sansSerif};
+  font-family: ${(p) => p.theme.fonts.serif};
 
   ${mediaqueries.desktop`
     margin-bottom: 15px;
@@ -201,9 +201,7 @@ const Title = styled(Headings.h1)`
 
 const NothingYetContainer = styled(Paragraph)`
   text-align: center;
-  font-size: 2.3rem;
   ${mediaqueries.phablet`
-    font-size: 1.8rem;
     margin-bottom; 15px;
   `}
   ${mediaqueries.phablet`
@@ -224,7 +222,6 @@ const BoldLink = styled.a`
 BoldLink.defaultProps = { target: '_blank' };
 
 const P = styled(Paragraph)`
-  font-size: 2.3rem;
   margin-bottom: 10px;
   max-width: ${(p) => (p.narrow ? '415px' : '515px')};
   margin-left: 0px;
@@ -234,7 +231,6 @@ const P = styled(Paragraph)`
   `}
 
   ${mediaqueries.phablet`
-    font-size: 1.8rem;
     margin-bottom; 15px;
   `}
 

@@ -2,6 +2,8 @@
 // require('typeface-merriweather');
 // require('fontsource-nunito');
 // require('fontsource-libre-baskerville');
+require('fontsource-source-serif-pro');
+require('fontsource-source-serif-pro/700.css');
 
 exports.onInitialClientRender = require('./src/gatsby/browser/onInitialClientRender');
 exports.onRouteUpdate = require('./src/gatsby/browser/onRouteUpdate');

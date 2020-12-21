@@ -7,7 +7,7 @@ const Paragraph = styled.p`
   font-size: 2rem;
   color: ${(p) => p.theme.colors.articleText};
   font-family: ${(p) => p.theme.fonts.sansSerif};
-  letter-spacing: 0.21px;
+  letter-spacing: .25px;
   transition: ${(p) => p.theme.colorModeTransition};
   margin: 0 auto 35px;
   width: 100%;

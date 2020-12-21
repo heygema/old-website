@@ -10,7 +10,10 @@ import mediaqueries from '@styles/media';
 import { IArticle } from '@types';
 
 import { GridLayoutContext } from './Articles.List.Context';
-import { Tag, TagsContainer as TagsContainerBase } from '../../components/Tag';
+import {
+  Tag as TagBase,
+  TagsContainer as TagsContainerBase,
+} from '../../components/Tag';
 
 /**
  * Tiles
@@ -163,7 +166,7 @@ const showDetails = css`
 `;
 
 const TagsContainer = styled(TagsContainerBase)`
-  margin-top: 10px;
+  margin-top: 5px;
 
   ${mediaqueries.phablet`
     max-width: 100%;
@@ -297,7 +300,7 @@ const ImageContainer = styled.div<{ narrow: boolean; gridLayout: string }>`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 21px;
+  font-size: 23px;
   font-family: ${(p) => p.theme.fonts.serif};
   margin-bottom: ${(p) =>
     p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '10px'};
@@ -320,6 +323,10 @@ const Title = styled(Headings.h2)`
   `}
 `;
 
+const Tag = styled(TagBase)`
+  font-size: 1.5rem;
+`;
+
 const Excerpt = styled.p<{
   hasOverflow: boolean;
   narrow: boolean;
@@ -327,8 +334,8 @@ const Excerpt = styled.p<{
 }>`
   font-family: ${(p) => p.theme.fonts.sansSerif};
   ${limitToTwoLines};
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+  font-size: 15px;
+  margin-bottom: 5px;
   color: ${(p) => p.theme.colors.grey};
   display: ${(p) =>
     p.hasOverflow && p.gridLayout === 'tiles' ? 'none' : 'box'};
@@ -352,7 +359,7 @@ const Excerpt = styled.p<{
 
 const MetaData = styled.div`
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   color: ${(p) => p.theme.colors.grey};
   opacity: 0.33;
 

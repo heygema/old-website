@@ -1,5 +1,18 @@
 import { css } from '@emotion/core';
-import Wotfard from '../fonts/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf';
+// import Wotfard from '../fonts/Wotfard_Regular_Webfont/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf';
+
+/*
+
+wotfard
+  @font-face {
+    font-family: 'Wotfard';
+    src: url(${Wotfard}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+*/
 
 const linkStrokeStuff = `
 :root {
@@ -64,13 +77,6 @@ export const globalStyles = css`
   @import url('https://use.typekit.net/hfy7jzr.css');
 
   @font-face {
-    font-family: 'Wotfard';
-    src: url(${Wotfard}) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
     font-family: '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
       'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
       'Arial', sans-serif;
@@ -100,9 +106,9 @@ export const globalStyles = css`
   }
 
   body {
-    font-family: Wotfard, '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
-      'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI',
-      'Arial', sans-serif;
+    font-family: 'Dm Sans', '-apple-system', 'BlinkMacSystemFont',
+      'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto',
+      'Segoe UI', 'Arial', sans-serif;
     font-size: 1.6rem;
     margin: 0;
     font-weight: 400;

@@ -182,17 +182,17 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-size: 3.5rem;
+  font-size: 35px;
   ${mediaqueries.desktop`
     margin-bottom: 15px;
   `}
 
   ${mediaqueries.tablet`
-    font-size: 3rem;
+    font-size: 30px;
   `}
 
   ${mediaqueries.phablet`
-    font-size: 2.8rem;
+    font-size: 28px;
     padding: 30px 20px 0;
     margin-bottom: 10px;
   `}

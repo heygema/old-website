@@ -12,7 +12,7 @@ const UnorderedList = styled.ul`
   padding: 15px 0 30px 30px;
   transition: ${(p) => p.theme.colorModeTransition};
   margin: 0 auto;
-  font-size: 1.8rem;
+  font-size: 18px;
 
   width: 100%;
   max-width: 680px;
@@ -28,7 +28,7 @@ const UnorderedList = styled.ul`
 
   ${mediaqueries.phablet`
     padding-left: 20px;
-    font-size: 1.6rem;
+    font-size: 16px;
   `};
 
   li {

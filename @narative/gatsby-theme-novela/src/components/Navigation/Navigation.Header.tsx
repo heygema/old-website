@@ -209,12 +209,12 @@ export default NavigationHeader;
 
 const AboutText = styled(Headings.h4)`
   opacity: 0.5;
-  font-size: 1.8rem;
+  font-size: 18px;
   font-family: ${p => p.theme.fonts.sansSerif};
   animation: fadein 0.3s linear forwards;
 
   ${mediaqueries.tablet`
-    font-size: 1.5rem;  
+    font-size: 15px;  
   `}
 
   transition: opacity 0.3s ease;
@@ -225,7 +225,7 @@ const AboutText = styled(Headings.h4)`
   }
 
   ${mediaqueries.phablet`
-    font-size: 1.3rem;  
+    font-size: 13px;  
     padding: 30px 5px 0;
     margin-bottom: 28px;
     -webkit-line-clamp: 3;
@@ -233,7 +233,7 @@ const AboutText = styled(Headings.h4)`
 `;
 
 const Title = styled(Headings.h2)`
-  font-size: 2rem;
+  font-size: 20px;
   font-family: ${p => p.theme.fonts.sansSerif};
   margin-bottom: ${p =>
     p.hasOverflow && p.gridLayout === 'tiles' ? '35px' : '10px'};

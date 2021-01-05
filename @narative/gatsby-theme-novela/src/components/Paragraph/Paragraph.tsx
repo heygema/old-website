@@ -4,7 +4,7 @@ import mediaqueries from '@styles/media';
 // before: font-size: 18px
 const Paragraph = styled.p`
   line-height: 1.756;
-  font-size: 2rem;
+  font-size: 20px;
   color: ${(p) => p.theme.colors.articleText};
   font-family: ${(p) => p.theme.fonts.serif};
   letter-spacing: .25px;
@@ -24,7 +24,7 @@ const Paragraph = styled.p`
   ${mediaqueries.tablet`
     max-width: 486px;
     margin: 0 auto 25px;
-    font-size: 1.7rem;
+    font-size: 17px;
   `};
 
   ${mediaqueries.phablet`

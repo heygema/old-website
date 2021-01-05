@@ -182,6 +182,7 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
+  font-size: 3.5rem;
   ${mediaqueries.desktop`
     margin-bottom: 15px;
   `}

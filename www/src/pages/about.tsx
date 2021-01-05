@@ -75,7 +75,7 @@ const AboutPage: Template = ({ location }) => {
               </Ketikin>
             </HelloDiv>
             <P>
-              👋 My name is {title}! (He/Him) I took Software Engineer as my
+              👋 My name is {title}! (He/Him) I took Software Engineering as my
               profession. I grew up in Jakarta, Indonesia. I've work with
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reasonml.github.io', 'ReasonML')},{' '}

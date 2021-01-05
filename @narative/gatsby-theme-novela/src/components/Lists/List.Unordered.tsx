@@ -4,7 +4,7 @@ import mediaqueries from '@styles/media';
 // previous font size 18px
 
 const UnorderedList = styled.ul`
-  font-family: ${(p) => p.theme.fonts.sansSerif};
+  font-family: ${(p) => p.theme.fonts.serif};
   list-style: none;
   counter-reset: list;
   color: ${(p) => p.theme.colors.articleText};

@@ -182,8 +182,6 @@ const Row = styled.div`
 `;
 
 const Title = styled(Headings.h1)`
-  font-family: ${(p) => p.theme.fonts.serif};
-
   ${mediaqueries.desktop`
     margin-bottom: 15px;
   `}

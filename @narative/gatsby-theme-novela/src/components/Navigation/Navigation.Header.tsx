@@ -254,6 +254,7 @@ const Title = styled(Headings.h2)`
     padding: 28px 20px 0;
     margin-bottom: 28px;
     -webkit-line-clamp: 3;
+    display: none;
   `}
 `;
 

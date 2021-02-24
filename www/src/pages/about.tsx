@@ -1,6 +1,7 @@
 import React from 'react';
 import Ketikin from 'ketikin';
 import { graphql, useStaticQuery } from 'gatsby';
+import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 
 import Section from '@narative/gatsby-theme-novela/src/components/Section';
@@ -93,9 +94,22 @@ const AboutPage: Template = ({ location }) => {
               .
             </P>
           </BioContainer>
-          <ProfilePictureDiv>
-            <Gooey />
-          </ProfilePictureDiv>
+          <motion.div
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              visible: {
+                opacity: 1,
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+          >
+            <ProfilePictureDiv>
+              <Gooey />
+            </ProfilePictureDiv>
+          </motion.div>
         </Row>
         <Row>
           <div

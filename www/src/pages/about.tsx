@@ -81,14 +81,8 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
               websites and mobile apps. Here\'s my{' '}
-              {makeLink('http://soundcloud.com/heygema', 'My Soundcloud')}. This
-              is a place to pour my thoughts about a variety of topics, not
-              limited to{' '}
-              {makeLink(
-                'https://en.wikipedia.org/wiki/Computer_programming',
-                'programming',
-              )}
-              .
+              {makeLink('http://soundcloud.com/heygema', 'My Soundcloud')},
+              well.
             </P>
           </BioContainer>
           <ProfilePictureDiv>

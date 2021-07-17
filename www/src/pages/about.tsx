@@ -81,8 +81,17 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
               websites and mobile apps. Here's my{' '}
-              {makeLink('http://soundcloud.com/heygema', 'My Soundcloud')},
+              {makeLink('http://soundcloud.com/heygema', 'My Soundcloud')}, and
               well.
+            </P>
+            <P>
+              <Bold>BTC:</Bold> bc1ql0ggp26ap2jma3ukly2qf924t2hl4ymwd2uw0q
+            </P>
+            <P>
+              <Bold>ONE:</Bold> one1fcv9heajwksqn0duew07jg4lsmgngetwj97rtm
+            </P>
+            <P>
+              <Bold>ETH:</Bold> 0xa57e31BA99a010BbafE08F58E46a520bc9fF82E4
             </P>
           </BioContainer>
           <ProfilePictureDiv>
@@ -198,6 +207,16 @@ const NothingYetContainer = styled(Paragraph)`
   ${mediaqueries.phablet`
     margin-bottom: 20px;
   `}
+`;
+
+const Bold = styled.span`
+  color: ${(p) => p.theme.colors.articleText};
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: ${(p) => p.theme.colors.accent};
+  }
 `;
 
 const BoldLink = styled.a`

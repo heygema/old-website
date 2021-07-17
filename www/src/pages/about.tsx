@@ -80,7 +80,7 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('https://www.typescriptlang.org/', ' TypeScript')},{' '}
               {makeLink('https://reactjs.org/', 'React')} &{' '}
               {makeLink('https://reactnative.dev', 'React Native')} to create
-              websites and mobile apps. Here\'s my{' '}
+              websites and mobile apps. Here's my{' '}
               {makeLink('http://soundcloud.com/heygema', 'My Soundcloud')},
               well.
             </P>

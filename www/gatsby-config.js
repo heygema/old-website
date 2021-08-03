@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config();
 
 const siteMetadata = {
   title: `Gema Anggada`,
@@ -21,27 +21,23 @@ const siteMetadata = {
       url: `https://codepen.io/heygema`,
     },
     {
-      url: 'https://www.linkedin.com/in/heygema/'
-    },
-    {
-      name: 'stackoverflow',
-      url: `https://stackoverflow.com/users/3465227/ghostkraviz?tab=profile`,
+      url: 'https://www.linkedin.com/in/heygema/',
     },
     {
       name: `mailto`,
-      url: `mailto:gema@posteo.net`,
+      url: 'mailto:heygema@pm.me',
     },
   ],
 };
 
 const plugins = [
   {
-    resolve: "@narative/gatsby-theme-novela",
+    resolve: '@narative/gatsby-theme-novela',
     options: {
-      contentPosts: "content/posts",
-      contentAuthors: "content/authors",
-      rootPath: "/",
-      basePath: "/",
+      contentPosts: 'content/posts',
+      contentAuthors: 'content/authors',
+      rootPath: '/',
+      basePath: '/',
       authorsPage: true,
       mailchimp: true,
       tags: true,
@@ -70,10 +66,10 @@ const plugins = [
   //   },
   // },
   {
-    resolve: "gatsby-plugin-mailchimp",
+    resolve: 'gatsby-plugin-mailchimp',
     options: {
       endpoint:
-        "https://github.us2.list-manage.com/subscribe/post?u=891008f2da0cae715f3833eeb&id=e647010d64"
+        'https://github.us2.list-manage.com/subscribe/post?u=891008f2da0cae715f3833eeb&id=e647010d64',
     },
   },
 ];

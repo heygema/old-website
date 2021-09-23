@@ -107,7 +107,7 @@ const AboutPage: Template = ({ location }) => {
           >
             <div
               style={{
-                display: 'flex',
+                display: 'none',
                 justifyContent: 'center',
               }}
             >

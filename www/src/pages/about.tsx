@@ -90,24 +90,6 @@ const AboutPage: Template = ({ location }) => {
               {makeLink('http://soundcloud.com/heygema', 'My Soundcloud')}, and
               well.
             </P>
-            <Crypto>
-              <BoldLink href="https://bitcoin.org">bitcoin:</BoldLink>{' '}
-              <a onClick={copyAddress}>
-                bc1ql0ggp26ap2jma3ukly2qf924t2hl4ymwd2uw0q
-              </a>
-            </Crypto>
-            <Crypto>
-              <BoldLink href="https://harmony.one">harmony:</BoldLink>{' '}
-              <a onClick={copyAddress}>
-                one1fcv9heajwksqn0duew07jg4lsmgngetwj97rtm
-              </a>
-            </Crypto>
-            <Crypto>
-              <BoldLink href="https://ethereum.org">ethereum:</BoldLink>{' '}
-              <a onClick={copyAddress}>
-                0xa57e31BA99a010BbafE08F58E46a520bc9fF82E4
-              </a>
-            </Crypto>
           </BioContainer>
           <ProfilePictureDiv>
             <Gooey />

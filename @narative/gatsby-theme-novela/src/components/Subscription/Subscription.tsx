@@ -102,7 +102,7 @@ export default Subscription;
 
 const SubscriptionContainer = styled.div`
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 64px 0 55px;
   margin: 10px auto 100px;

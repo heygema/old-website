@@ -65,13 +65,13 @@ const plugins = [
   //     trackingId: "UA-118232427-3",
   //   },
   // },
-  {
-    resolve: 'gatsby-plugin-mailchimp',
-    options: {
-      endpoint:
-        'https://github.us2.list-manage.com/subscribe/post?u=891008f2da0cae715f3833eeb&id=e647010d64',
-    },
-  },
+  // {
+  // resolve: 'gatsby-plugin-mailchimp',
+  // options: {
+  // endpoint:
+  // 'https://github.us2.list-manage.com/subscribe/post?u=891008f2da0cae715f3833eeb&id=e647010d64',
+  // },
+  // },
 ];
 
 /**

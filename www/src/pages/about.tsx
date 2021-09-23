@@ -118,7 +118,7 @@ const AboutPage: Template = ({ location }) => {
                 flex: 1,
                 minHeight: 400,
                 zIndex: 100,
-                display: 'flex',
+                display: 'none',
                 justifyContent: 'center',
                 alignItems: 'center',
               }}

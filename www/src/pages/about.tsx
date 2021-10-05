@@ -95,7 +95,11 @@ const AboutPage: Template = ({ location }) => {
             <Gooey />
           </ProfilePictureDiv>
         </Row>
-        <Row>
+        <Row
+          style={{
+            display: 'none'
+          }}
+        >
           <div
             style={{
               flex: 1,

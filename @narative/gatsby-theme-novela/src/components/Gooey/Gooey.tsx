@@ -41,22 +41,22 @@ const Goeey: React.FC<{}> = () => {
 
 const ImageInsideGooey = styled(Image)`
   position: absolute;
-  margin-left: 90px;
+  margin-left: 60px;
   height: 320px;
 
   ${mediaqueries.desktop`
     height: 280px;
-    margin-left: 70px;
+    margin-left: 40px;
   `}
 
   ${mediaqueries.tablet`
     height: 180px;
-    margin-left: 50px;
+    margin-left: 20px;
   `}
 
   ${mediaqueries.phablet`
     height: 180px;
-    margin-left: 50px;
+    margin-left: 20px;
   `}
 `;
 
